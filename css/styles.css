@@ -79,6 +79,8 @@ body {
 .search {
   height: 100%;
   width: 50%;
+  max-width: 28rem;
+  min-width: 14rem;
   padding: 0.2rem;
   border: 3px solid var(--cuarto);
 }
