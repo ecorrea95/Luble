@@ -67,7 +67,10 @@ function comparoJugadores(jugador, jugadorOculto) {
   // Comparo altura
   comparoAltura(jugador, jugadorOculto);
 
-  // i += '<div class="grid-item">'+jugador.altura+'cm</div>';
+  // Comparo edad
+  comparoEdad(jugador, jugadorOculto);
+
+
   // i += '<div class="grid-item">'+jugador.edad+'</div>';
   // i += '<div class="grid-item">'+jugador.numero+'</div>';
   // i += '<div class="grid-item">'+jugador.extranjero+'</div>';
@@ -92,20 +95,39 @@ function comparoPosicion(jugador, jugadorOculto) {
   i += resultado;
 }
 
+// Comparo altura
 function comparoAltura(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.altura+'cm</div>'
-  console.log(jugador.altura - jugadorOculto.altura)
   // Si es la misma altura
   if (jugador.altura == jugadorOculto.altura) {
-    resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.altura+'</div>';
+    resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.altura+'cm</div>';
   }
   // Si la altura es mas baja
   if ( (jugador.altura - jugadorOculto.altura) <= 10 && (jugador.altura - jugadorOculto.altura) > 0 ) {
-    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'</div>';
+    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm</div>';
   }
   // Si la altura es más alta
   if ( (jugador.altura - jugadorOculto.altura) >= 10 && (jugador.altura - jugadorOculto.altura) < 0 ) {
-   resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'</div>';
+   resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm</div>';
+  }
+  i += resultado;
+}
+
+// Comparo edad
+function comparoEdad(jugador, jugadorOculto) {
+  let resultado = '<div class="grid-item">'+jugador.edad+'</div>';
+  console.log(jugador.edad - jugadorOculto.edad)
+  // Si es la misma edad
+  if (jugador.edad == jugadorOculto.edad) {
+    resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.edad+'</div>';
+  }
+  // Si la edad es mas baja
+  if ( (jugador.edad - jugadorOculto.edad) <= 2 && (jugador.edad - jugadorOculto.edad) > 0 ) {
+    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'</div>';
+  }
+  // Si la edad es más alta
+  if ( (jugador.edad - jugadorOculto.edad) >= 2 && (jugador.edad - jugadorOculto.edad) < 0 ) {
+   resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'</div>';
   }
   i += resultado;
 }
