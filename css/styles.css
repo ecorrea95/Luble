@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway&display=swap');
+
+/* Vartiables */
+:root {
+  --primero: #0088cf;
+  --segundo: #C0FDFB;
+  --tercero: #f1f1f1;
+  --cuarto: #18314F;
+}
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--tercero);
+  font-family: 'Solway', serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Navbar */
+.navbar {
+  height: 3rem;
+  width: 100vw;
+  background-color: var(--primero);
+  text-align: center;
+  color: white;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.navbar ul li {
+  float: left;
+  margin-inline: 2rem;
+  line-height: 3rem;
+  cursor: pointer;
+}
+
+.navbar ul li:hover {
+  text-decoration: underline 3px var(--segundo);
+}
+
+.navbar ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Titulos */
+.title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 4rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Busqueda */
+.searchContainer {
+  text-align: center;
+  margin-top: 1rem;
+  height: 2rem;
+}
+
+.search {
+  height: 100%;
+  width: 50%;
+  padding: 0.2rem;
+  border: 3px solid var(--cuarto);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: var(--primero);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer a:hover {
+  text-decoration: underline 3px var(--segundo);
+}
