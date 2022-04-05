@@ -19,8 +19,8 @@
 body {
   background-color: var(--tercero);
   font-family: 'Solway', serif;
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
 }
 
 .hide {
@@ -29,7 +29,7 @@ body {
 
 /* Navbar */
 .navbar {
-  height: 3rem;
+  height: 5vh;
   width: 100vw;
   background-color: var(--primero);
   text-align: center;
@@ -47,7 +47,8 @@ body {
 .navbar ul li {
   float: left;
   margin-inline: 2rem;
-  line-height: 3rem;
+  line-height: 5vh;
+  font-size: 20px;
   cursor: pointer;
 }
 
@@ -90,12 +91,13 @@ body {
   min-width: 14rem;
   padding: 0.2rem;
   border: 3px solid var(--cuarto);
+  font-size: 20px;
 }
 
 /* Intentos */
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto auto auto auto auto;
+  grid-template-columns: 35% auto auto auto auto auto auto;
   background-color: var(--cuarto);
   padding: 10px;
   margin: auto;
@@ -120,8 +122,9 @@ body {
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 2rem;
-  line-height: 2rem;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 20px;
 }
 
 .footer a {
