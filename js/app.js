@@ -68,9 +68,10 @@ function comparoJugadores(jugador, jugadorOculto) {
   // Comparo edad
   comparoEdad(jugador, jugadorOculto);
 
+  // Comparo numero
+  comparoNumero(jugador, jugadorOculto);
 
-  // i += '<div class="grid-item">'+jugador.edad+'</div>';
-  i += '<div class="grid-item">'+jugador.numero+'</div>';
+  // i += '<div class="grid-item">'+jugador.numero+'</div>';
   i += '<div class="grid-item">'+jugador.extranjero+'</div>';
 
   $(i).appendTo("#intentos");
@@ -116,7 +117,6 @@ function comparoAltura(jugador, jugadorOculto) {
 // Comparo edad
 function comparoEdad(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.edad+'</div>';
-  console.log(jugador.edad - jugadorOculto.edad)
   // Si es la misma edad
   if (jugador.edad == jugadorOculto.edad) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.edad+'</div>';
@@ -131,6 +131,26 @@ function comparoEdad(jugador, jugadorOculto) {
   }
   i += resultado;
 }
+
+// Comparo numero
+function comparoNumero(jugador, jugadorOculto) {
+  let resultado = '<div class="grid-item">'+jugador.numero+'</div>';
+  console.log(jugador.numero - jugadorOculto.numero)
+  // Si es la misma numero
+  if (jugador.numero == jugadorOculto.numero) {
+    resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.numero+'</div>';
+  }
+  // Si la numero es mas baja
+  if ( (jugador.numero - jugadorOculto.numero) <= 2 && (jugador.numero - jugadorOculto.numero) > 0 ) {
+    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.numero+'</div>';
+  }
+  // Si la numero es más alta
+  if ( (jugador.numero - jugadorOculto.numero) >= -2 && (jugador.numero - jugadorOculto.numero) < 0 ) {
+   resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.numero+'</div>';
+  }
+  i += resultado;
+}
+
 
 // Imprimo el jugador oculto
 function imprimirJugadorOculto(color, jugador) {
