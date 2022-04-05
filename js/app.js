@@ -1,7 +1,7 @@
 // Jugador oculto al azar
 const random = Math.floor(Math.random() * jugadores.length);
 console.log(random, jugadores[random]);
-let i = '';
+var i = '';
 var intento = 1;
 
 // Agrego todos los datalist al input de search
@@ -13,6 +13,7 @@ $(j).appendTo('#opcionesJ');
 
 // Funcion para buscar jugador en el array de jugadores
 function buscarJugador(nombre) {
+  i = '';
   intento++;
   verificarIntento();
   var match = jugadores.filter(function(jugador) {
@@ -32,7 +33,6 @@ function imprimirJugador(jugador) {
   } else {
     comparoJugadores(jugador[0], jugadores[random]);
   }
-  $(i).appendTo("#intentos");
 }
 
 function verificarIntento() {
@@ -48,8 +48,6 @@ function verificarIntento() {
 
 // Comparo jugador oculto contra jugador input
 function comparoJugadores(jugador, jugadorOculto) {
-  console.log("jugador input", jugador.nombre);
-  console.log("jugador random", jugadorOculto.nombre);
 
   // Imprimo el nombre
   i += '<div class="grid-item">'+jugador.nombre+'</div>';
@@ -72,8 +70,10 @@ function comparoJugadores(jugador, jugadorOculto) {
 
 
   // i += '<div class="grid-item">'+jugador.edad+'</div>';
-  // i += '<div class="grid-item">'+jugador.numero+'</div>';
-  // i += '<div class="grid-item">'+jugador.extranjero+'</div>';
+  i += '<div class="grid-item">'+jugador.numero+'</div>';
+  i += '<div class="grid-item">'+jugador.extranjero+'</div>';
+
+  $(i).appendTo("#intentos");
 
 }
 
