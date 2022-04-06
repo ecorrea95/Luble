@@ -35,7 +35,8 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
     return jugador.nombre === jO;
   });
 
-  console.log(jugadorOculto);
+  jugadorOculto = jugadorOculto[0];
+
 
   int = int.split(',');
 
@@ -44,7 +45,6 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
     let j = jugadores.filter(function(jugador) {
       return jugador.nombre === int[i];
     });
-    console.log(j);
     imprimirJugador(j);
     $("#intentos").removeClass("hide");
   }
