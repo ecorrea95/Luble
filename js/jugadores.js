@@ -20,10 +20,11 @@ $(j).appendTo('#opcionesJ');
 // COMPARACIONES
 // Comparo equipo
 function comparoEquipos(jugador, jugadorOculto) {
-  if (jugador.equipoActual == jugadorOculto.equipoActual) {
+  if (jugador.equipoActual == jugadorOculto[0].equipoActual) {
     i += '<div class="grid-item" style="background-color:var(--verde)">'+jugador.equipoActual+'</div>';
   } else {
     // Comparo equipo actual con equipos pasados
+    i += '<div class="grid-item">'+jugador.equipoActual+'</div>';
 
   }
 }
@@ -32,15 +33,15 @@ function comparoEquipos(jugador, jugadorOculto) {
 function comparoPosicion(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.posicion+'</div>';
   // Si es la misma posicion
-  if (jugador.posicionNumero == jugadorOculto.posicionNumero) {
+  if (jugador.posicionNumero == jugadorOculto[0].posicionNumero) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.posicion+'</div>';
   }
   // Si la posicion es mas baja
-  if ( (jugador.posicionNumero - 1) == jugadorOculto.posicionNumero ) {
+  if ( (jugador.posicionNumero - 1) == jugadorOculto[0].posicionNumero ) {
     resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.posicion+'</div>';
   }
   // Si la posicion es más alta
-  if ( (jugador.posicionNumero + 1) == jugadorOculto.posicionNumero ) {
+  if ( (jugador.posicionNumero + 1) == jugadorOculto[0].posicionNumero ) {
    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.posicion+'</div>';
   }
   i += resultado;
@@ -50,15 +51,15 @@ function comparoPosicion(jugador, jugadorOculto) {
 function comparoAltura(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.altura+'cm</div>'
   // Si es la misma altura
-  if (jugador.altura == jugadorOculto.altura) {
+  if (jugador.altura == jugadorOculto[0].altura) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.altura+'cm</div>';
   }
   // Si la altura es mas baja
-  if ( (jugador.altura - jugadorOculto.altura) <= 10 && (jugador.altura - jugadorOculto.altura) > 0 ) {
+  if ( (jugador.altura - jugadorOculto[0].altura) <= 10 && (jugador.altura - jugadorOculto[0].altura) > 0 ) {
     resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm</div>';
   }
   // Si la altura es más alta
-  if ( (jugador.altura - jugadorOculto.altura) >= 10 && (jugador.altura - jugadorOculto.altura) < 0 ) {
+  if ( (jugador.altura - jugadorOculto[0].altura) >= 10 && (jugador.altura - jugadorOculto[0].altura) < 0 ) {
    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm</div>';
   }
   i += resultado;
@@ -68,15 +69,15 @@ function comparoAltura(jugador, jugadorOculto) {
 function comparoEdad(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.edad+'</div>';
   // Si es la misma edad
-  if (jugador.edad == jugadorOculto.edad) {
+  if (jugador.edad == jugadorOculto[0].edad) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.edad+'</div>';
   }
   // Si la edad es mas baja
-  if ( (jugador.edad - jugadorOculto.edad) <= 2 && (jugador.edad - jugadorOculto.edad) > 0 ) {
+  if ( (jugador.edad - jugadorOculto[0].edad) <= 2 && (jugador.edad - jugadorOculto[0].edad) > 0 ) {
     resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'</div>';
   }
   // Si la edad es más alta
-  if ( (jugador.edad - jugadorOculto.edad) >= -2 && (jugador.edad - jugadorOculto.edad) < 0 ) {
+  if ( (jugador.edad - jugadorOculto[0].edad) >= -2 && (jugador.edad - jugadorOculto[0].edad) < 0 ) {
    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'</div>';
   }
   i += resultado;
@@ -86,15 +87,15 @@ function comparoEdad(jugador, jugadorOculto) {
 function comparoNumero(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.numero+'</div>';
   // Si es la misma numero
-  if (jugador.numero == jugadorOculto.numero) {
+  if (jugador.numero == jugadorOculto[0].numero) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.numero+'</div>';
   }
   // Si la numero es mas baja
-  if ( (jugador.numero - jugadorOculto.numero) <= 2 && (jugador.numero - jugadorOculto.numero) > 0 ) {
+  if ( (jugador.numero - jugadorOculto[0].numero) <= 2 && (jugador.numero - jugadorOculto[0].numero) > 0 ) {
     resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.numero+'</div>';
   }
   // Si la numero es más alta
-  if ( (jugador.numero - jugadorOculto.numero) >= -2 && (jugador.numero - jugadorOculto.numero) < 0 ) {
+  if ( (jugador.numero - jugadorOculto[0].numero) >= -2 && (jugador.numero - jugadorOculto[0].numero) < 0 ) {
    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.numero+'</div>';
   }
   i += resultado;
@@ -103,7 +104,7 @@ function comparoNumero(jugador, jugadorOculto) {
 // Comparo extranjero
 function comparoExtranjero(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.extranjero+'</div>';
-  if (jugador.extranjero == jugadorOculto.extranjero) {
+  if (jugador.extranjero == jugadorOculto[0].extranjero) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.extranjero+'</div>'
   }
   i += resultado;
@@ -153,39 +154,35 @@ function imprimirJugadorOculto(jugadorOculto) {
 
 // Funcion para imprimir el jugador en la variable y comparo con el jugador a adivinar
 function imprimirJugador(jugador) {
-  if (jugador[0].nombre == jugadores[random].nombre) {
+  if (jugador[0].nombre == jugadorOculto.nombre) {
     imprimirJugadorOculto(jugadorOculto);
-    alert("Ganaste! El jugador oculto es "+jugadores[random].nombre);
+    alert("Ganaste! El jugador oculto es "+jugadorOculto.nombre);
   } else {
-    comparoJugadores(jugador[0], jugadores[random]);
+    comparoJugadores(jugador[0], jugadorOculto);
     // Verificar si es el jugador oculto
     verificarIntento();
   }
 }
 
-
-
 // GAME systems
 // Funcion para buscar jugador en el array de jugadores
 function buscarJugador(nombre) {
-
   var intent = localStorage.getItem("intentos");
-  if (intent == '') {
-    intent = [];
+  intent = intent.split(',');
+  if (intent[0] == '') {
+    intent[0] = nombre;
+  } else {
+    intent.push(nombre);
   }
-  intent.push(nombre);
-
-  console.log(intent);
   localStorage.setItem('intentos', intent);
-
 
   i = '';
   intento++;
+  localStorage.setItem('cantIntentos', intento);
   match = '';
   match = jugadores.filter(function(jugador) {
     return jugador.nombre === nombre;
   });
-  console.log(match);
   $("#intentos").removeClass("hide");
   imprimirJugador(match);
 }
