@@ -195,3 +195,11 @@ function perdiste() {
   alert("Perdiste!");
   imprimirJugadorOculto(jugadorOculto);
 }
+
+// Busqueda de jugador por el dropdown
+$("#buscador").change(function() {
+  let jug = $("#buscador").val();
+  buscarJugador(jug);
+  console.log($("#buscador").val());
+  $("#buscador").val("");
+});
