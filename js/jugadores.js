@@ -1,7 +1,7 @@
 // Jugador oculto al azar
 const random = Math.floor(Math.random() * jugadores.length);
 console.log(random, jugadores[random]);
-var i = '';
+const jugadorOculto = jugadores[random];
 var intento = 1;
 
 // Agrego todos los datalist al input de search
@@ -11,71 +11,16 @@ for (let i=0; i<jugadores.length; i++) {
 }
 $(j).appendTo('#opcionesJ');
 
-// Funcion para buscar jugador en el array de jugadores
-function buscarJugador(nombre) {
-  i = '';
-  intento++;
-  verificarIntento();
-  var match = jugadores.filter(function(jugador) {
-    return jugador.nombre === nombre;
-  });
-  console.log(match);
-  $("#intentos").removeClass("hide");
-  imprimirJugador(match);
-}
 
-// Funcion para imprimir el jugador en la variable y comparo con el jugador a adivinar
-function imprimirJugador(jugador) {
-  // Verificar si es el jugador oculto
-  if (jugador[0].nombre == jugadores[random].nombre) {
-    imprimirJugadorOculto("verde", jugador);
-    alert("Ganaste! El jugador oculto es "+jugadores[random].nombre);
-  } else {
-    comparoJugadores(jugador[0], jugadores[random]);
-  }
-}
-
-function verificarIntento() {
-  if (intento > 6) {
-    $("#buscador").prop("placeholder", "Perdiste!");
-    $("#buscador").prop("disabled", true);
-    alert("Perdiste!");
-    imprimirJugadorOculto();
-  } else {
-    $("#buscador").prop("placeholder", "Intento "+intento+"/6...")
-  }
-}
-
-// Comparo jugador oculto contra jugador input
-function comparoJugadores(jugador, jugadorOculto) {
-
-  // Imprimo el nombre
-  i += '<div class="grid-item">'+jugador.nombre+'</div>';
-
-  // Comparo equipo actual
+// COMPARACIONES
+// Comparo equipo
+function comparoEquipos(jugador, jugadorOculto) {
   if (jugador.equipoActual == jugadorOculto.equipoActual) {
     i += '<div class="grid-item" style="background-color:var(--verde)">'+jugador.equipoActual+'</div>';
   } else {
     // Comparo equipo actual con equipos pasados
 
   }
-  // Comparo posicion
-  comparoPosicion(jugador, jugadorOculto);
-
-  // Comparo altura
-  comparoAltura(jugador, jugadorOculto);
-
-  // Comparo edad
-  comparoEdad(jugador, jugadorOculto);
-
-  // Comparo numero
-  comparoNumero(jugador, jugadorOculto);
-
-  // i += '<div class="grid-item">'+jugador.numero+'</div>';
-  i += '<div class="grid-item">'+jugador.extranjero+'</div>';
-
-  $(i).appendTo("#intentos");
-
 }
 
 // Compario posiciones
@@ -135,7 +80,6 @@ function comparoEdad(jugador, jugadorOculto) {
 // Comparo numero
 function comparoNumero(jugador, jugadorOculto) {
   let resultado = '<div class="grid-item">'+jugador.numero+'</div>';
-  console.log(jugador.numero - jugadorOculto.numero)
   // Si es la misma numero
   if (jugador.numero == jugadorOculto.numero) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.numero+'</div>';
@@ -151,16 +95,103 @@ function comparoNumero(jugador, jugadorOculto) {
   i += resultado;
 }
 
+// Comparo extranjero
+function comparoExtranjero(jugador, jugadorOculto) {
+  let resultado = '<div class="grid-item">'+jugador.extranjero+'</div>';
+  if (jugador.extranjero == jugadorOculto.extranjero) {
+    resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.extranjero+'</div>'
+  }
+  i += resultado;
+}
 
+// Comparo jugador oculto contra jugador input
+function comparoJugadores(jugador, jugadorOculto) {
+
+  // Imprimo el nombre
+  i = '<div class="grid-item">'+jugador.nombre+'</div>';
+
+  // Comparo equipos
+  comparoEquipos(jugador, jugadorOculto);
+
+  // Comparo posicion
+  comparoPosicion(jugador, jugadorOculto);
+
+  // Comparo altura
+  comparoAltura(jugador, jugadorOculto);
+
+  // Comparo edad
+  comparoEdad(jugador, jugadorOculto);
+
+  // Comparo numero
+  comparoNumero(jugador, jugadorOculto);
+
+  // Comparo extranjero
+  comparoExtranjero(jugador, jugadorOculto);
+
+  $(i).appendTo("#intentos");
+
+}
+
+
+// Impresiones
 // Imprimo el jugador oculto
-function imprimirJugadorOculto(color, jugador) {
-  i += '<div class="grid-item" style="background-color:var(--'+color+')">'+jugador[0].nombre+'</div>';
-  i += '<div class="grid-item" style="background-color:var(--'+color+')">'+jugador[0].equipoActual+'</div>';
-  i += '<div class="grid-item" style="background-color:var(--'+color+')">'+jugador[0].posicion+'</div>';
-  i += '<div class="grid-item" style="background-color:var(--'+color+')">'+jugador[0].altura+'cm</div>';
-  i += '<div class="grid-item" style="background-color:var(--'+color+')">'+jugador[0].edad+'</div>';
-  i += '<div class="grid-item" style="background-color:var(--'+color+')">'+jugador[0].numero+'</div>';
-  i += '<div class="grid-item" style="background-color:var(--'+color+')">'+jugador[0].extranjero+'</div>';
+function imprimirJugadorOculto(jugadorOculto) {
+  i = '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.nombre+'</div>';
+  i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.equipoActual+'</div>';
+  i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.posicion+'</div>';
+  i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.altura+'cm</div>';
+  i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.edad+'</div>';
+  i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.numero+'</div>';
+  i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.extranjero+'</div>';
+  $(i).appendTo("#intentos");
   return;
+}
 
+// Funcion para imprimir el jugador en la variable y comparo con el jugador a adivinar
+function imprimirJugador(jugador) {
+  if (jugador[0].nombre == jugadores[random].nombre) {
+    imprimirJugadorOculto(jugadorOculto);
+    alert("Ganaste! El jugador oculto es "+jugadores[random].nombre);
+  } else {
+    comparoJugadores(jugador[0], jugadores[random]);
+    // Verificar si es el jugador oculto
+    verificarIntento();
+  }
+}
+
+
+
+// GAME systems
+// Funcion para buscar jugador en el array de jugadores
+function buscarJugador(nombre) {
+  i = '';
+  intento++;
+  match = '';
+  match = jugadores.filter(function(jugador) {
+    return jugador.nombre === nombre;
+  });
+  console.log(match);
+  $("#intentos").removeClass("hide");
+  imprimirJugador(match);
+}
+
+// Verificar intento
+function verificarIntento() {
+  if (intento > 6) {
+    perdiste();
+  } else {
+    $("#buscador").prop("placeholder", "Intento "+intento+"/6...")
+  }
+}
+
+function ganaste() {
+  alert("Ganaste!");
+  imprimirJugadorOculto(jugadorOculto);
+}
+
+function perdiste() {
+  $("#buscador").prop("placeholder", "Perdiste!");
+  $("#buscador").prop("disabled", true);
+  alert("Perdiste!");
+  imprimirJugadorOculto(jugadorOculto);
 }
