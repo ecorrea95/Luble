@@ -1,8 +1,13 @@
 // Jugador oculto al azar
-const random = Math.floor(Math.random() * jugadores.length);
-console.log(random, jugadores[random]);
-const jugadorOculto = jugadores[random];
+var random;
 var intento = 1;
+var jugadorOculto;
+
+function jugadorRandom() {
+  random = Math.floor(Math.random() * jugadores.length);
+  // console.log(random, jugadores[random]);
+  jugadorOculto = jugadores[random];
+}
 
 // Agrego todos los datalist al input de search
 var j = '';
@@ -132,7 +137,6 @@ function comparoJugadores(jugador, jugadorOculto) {
 
 }
 
-
 // Impresiones
 // Imprimo el jugador oculto
 function imprimirJugadorOculto(jugadorOculto) {
@@ -164,6 +168,17 @@ function imprimirJugador(jugador) {
 // GAME systems
 // Funcion para buscar jugador en el array de jugadores
 function buscarJugador(nombre) {
+
+  var intent = localStorage.getItem("intentos");
+  if (intent == '') {
+    intent = [];
+  }
+  intent.push(nombre);
+
+  console.log(intent);
+  localStorage.setItem('intentos', intent);
+
+
   i = '';
   intento++;
   match = '';
@@ -184,11 +199,13 @@ function verificarIntento() {
   }
 }
 
+// Ganaste
 function ganaste() {
   alert("Ganaste!");
   imprimirJugadorOculto(jugadorOculto);
 }
 
+// Perdiste
 function perdiste() {
   $("#buscador").prop("placeholder", "Perdiste!");
   $("#buscador").prop("disabled", true);
@@ -200,6 +217,5 @@ function perdiste() {
 $("#buscador").change(function() {
   let jug = $("#buscador").val();
   buscarJugador(jug);
-  console.log($("#buscador").val());
   $("#buscador").val("");
 });
