@@ -113,6 +113,10 @@ body {
   text-align: center;
 }
 
+/* Imagenes */
+.logoEquipo {
+  width: 5rem;
+}
 
 /* Footer */
 .footer {

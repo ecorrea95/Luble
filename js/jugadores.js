@@ -20,13 +20,12 @@ $(j).appendTo('#opcionesJ');
 // COMPARACIONES
 // Comparo equipo
 function comparoEquipos(jugador, jugadorOculto) {
-  console.log(jugador);
-  console.log(jugadorOculto);
   if (jugador.equipoActual == jugadorOculto.equipoActual) {
-    i += '<div class="grid-item" style="background-color:var(--verde)">'+jugador.equipoActual+'</div>';
+    console.log(jugador.logoEquipo);
+    i += '<div class="grid-item" style="background-color:var(--verde)"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
   } else {
     // Comparo equipo actual con equipos pasados
-    i += '<div class="grid-item">'+jugador.equipoActual+'</div>';
+    i += '<div class="grid-item"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
 
   }
 }

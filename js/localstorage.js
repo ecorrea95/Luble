@@ -41,7 +41,6 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
   int = int.split(',');
 
   for (let i=0; i<int.length; i++) {
-    console.log(int[i]);
     let j = jugadores.filter(function(jugador) {
       return jugador.nombre === int[i];
     });

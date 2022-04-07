@@ -145,8 +145,8 @@ const jugadores = [
   {
     nombre: "Santiago Vidal",
     imagen: "images/santiagovidal.jpg",
-    equipoActual: "",
-    equipoActualAb: "",
+    equipoActual: "Biguá",
+    equipoActualAb: "BIG",
     logoEquipo: "images/bigua.png",
     equiposPasado: ["Larrañaga", "Nacional", "Larre Borges", "Tabaré", "Trouville"],
     posicion: "B",
