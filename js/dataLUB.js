@@ -790,4 +790,19 @@ const jugadores = [
     edad: 32,
     extranjero: "Si"
   },
+  // Malvín
+  {
+    nombre: "",
+    imagen: "images/.jpg",
+    equipoActual: "Malvín",
+    equipoActualAb: "MAL",
+    logoEquipo: "images/malvin.png",
+    equiposPasado: [""],
+    posicion: "",
+    posicionNumero: ,
+    altura: ,
+    numero: ,
+    edad: ,
+    extranjero: "No"
+  },
 ]
