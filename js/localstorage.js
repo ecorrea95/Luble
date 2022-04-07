@@ -46,6 +46,7 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
     });
     imprimirJugador(j);
     $("#intentos").removeClass("hide");
+    $("#columnasTitulos").removeClass("hide");
   }
 
 }

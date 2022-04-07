@@ -650,18 +650,18 @@ const jugadores = [
     extranjero: "Si"
   },
   // Hebraica y Macabi
-  {
-    nombre: "",
-    imagen: "images/",
-    equipoActual: "Goes",
-    equipoActualAb: "GOE",
-    logoEquipo: "images/goes.png",
-    equiposPasado: [""],
-    posicion: "",
-    posicionNumero: ,
-    altura: ,
-    numero: ,
-    edad: ,
-    extranjero: "No"
-  },
+  // {
+  //   nombre: "",
+  //   imagen: "images/",
+  //   equipoActual: "Goes",
+  //   equipoActualAb: "GOE",
+  //   logoEquipo: "images/goes.png",
+  //   equiposPasado: [""],
+  //   posicion: "",
+  //   posicionNumero: ,
+  //   altura: ,
+  //   numero: ,
+  //   edad: ,
+  //   extranjero: "No"
+  // },
 ]
