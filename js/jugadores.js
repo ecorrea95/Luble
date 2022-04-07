@@ -61,13 +61,16 @@ function comparoAltura(jugador, jugadorOculto) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.altura+'cm</div>';
   }
   // Si la altura es 10cm más baja
-  if ( (jugador.altura - jugadorOculto.altura) <= 10 && (jugador.altura - jugadorOculto.altura) > 0 ) {
+
+  if (jugador.altura < jugadorOculto.altura && (jugadorOculto.altura-jugador.altura) <= 10) {
+    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm<br>&uarr;</div>';
+  }
+
+  // Si la altura es 10cm más alta
+  if (jugador.altura > jugadorOculto.altura && (jugador.altura-jugadorOculto.altura) <= 10) {
     resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm<br>&darr;</div>';
   }
-  // Si la altura es 10cm más alta
-  if ( (jugador.altura - jugadorOculto.altura) >= 10 && (jugador.altura - jugadorOculto.altura) < 0 ) {
-   resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm<br>&uarr;</div>';
-  }
+
   i += resultado;
 }
 
