@@ -21,7 +21,6 @@ $(j).appendTo('#opcionesJ');
 // Comparo equipo
 function comparoEquipos(jugador, jugadorOculto) {
   if (jugador.equipoActual == jugadorOculto.equipoActual) {
-    console.log(jugador.logoEquipo);
     i += '<div class="grid-item" style="background-color:var(--verde)"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
   } else {
     // Comparo equipo actual con equipos pasados
@@ -143,7 +142,7 @@ function comparoJugadores(jugador, jugadorOculto) {
 // Imprimo el jugador oculto
 function imprimirJugadorOculto(jugadorOculto) {
   i = '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.nombre+'</div>';
-  i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.equipoActual+'</div>';
+  i += '<div class="grid-item" style="background-color:var(--verde)"><img src="'+jugadorOculto.logoEquipo+'" class="logoEquipo" alt="'+jugadorOculto.equipoActual+'">'+jugadorOculto.equipoActualAb+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.posicion+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.altura+'cm</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.edad+'</div>';
@@ -185,6 +184,7 @@ function buscarJugador(nombre) {
     return jugador.nombre === nombre;
   });
   $("#intentos").removeClass("hide");
+  $("#columnasTitulos").removeClass("hide");
   imprimirJugador(match);
 }
 
