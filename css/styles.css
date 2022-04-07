@@ -35,6 +35,8 @@ body {
   background-color: var(--primero);
   text-align: center;
   color: white;
+  position: fixed;
+  top: 0;
 }
 
 .navbar ul {
@@ -68,7 +70,7 @@ body {
 /* Titulos */
 .title {
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 4rem;
   font-size: 4rem;
 }
 
