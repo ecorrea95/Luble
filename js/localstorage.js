@@ -48,6 +48,8 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
     $("#intentos").removeClass("hide");
     $("#columnasTitulos").removeClass("hide");
 
+    $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+
     if (i == 5) {
       verificarIntentoCargado();
     }

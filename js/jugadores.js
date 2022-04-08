@@ -246,7 +246,6 @@ function verificarIntento() {
 
 // Funcion de verificar intentos cargados
 function verificarIntentoCargado() {
-  console.log(intento);
   if (intento == 7) {
     // alert("Perdiste");
     console.log("Perdiste");
@@ -263,6 +262,9 @@ function verificarIntentoCargado() {
 function ganaste() {
   // Abro modal de ganaste
   alert("Ganaste! El jugador oculto es "+jugadorOculto.nombre);
+
+  $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+  console.log(intento);
 
   // Imprimo el jugador oculto
   imprimirJugadorOculto(jugadorOculto);
