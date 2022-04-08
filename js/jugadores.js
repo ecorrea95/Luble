@@ -161,7 +161,7 @@ function comparoJugadores(jugador, jugadorOculto) {
 
 // Impresiones
 // Imprimo el jugador oculto
-function imprimirJugadorOculto(jugadorOculto) {
+function imprimirJugadorOculto(jugadorOculto, status) {
   i = '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.nombre+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)"><img src="'+jugadorOculto.logoEquipo+'" class="logoEquipo" alt="'+jugadorOculto.equipoActual+'">'+jugadorOculto.equipoActualAb+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.posicion+'</div>';
@@ -170,6 +170,9 @@ function imprimirJugadorOculto(jugadorOculto) {
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.numero+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.extranjero+'</div>';
   $(i).appendTo("#intentos");
+
+  registrarPartidaGoP(status);
+
   return;
 }
 
@@ -210,7 +213,7 @@ function buscarJugador(nombre) {
       localStorage.setItem('cantidadPartidas', cantP);
     } else {
       localStorage.setItem('cantidadPartidas', 1);
-    }    
+    }
   }
 
   localStorage.setItem('cantIntentos', intento);
@@ -232,18 +235,59 @@ function verificarIntento() {
   }
 }
 
+// Registrar partida ganada o perdida
+function registrarPartidaGoP(status) {
+  console.log(status);
+  if (status == "ganada") {
+    var cpg = localStorage.getItem("cantPartGanadas");
+    if (cpg != null) {
+      cpg++;
+      localStorage.setItem("cantPartGanadas", cpg);
+    } else {
+      localStorage.setItem("cantPartGanadas", 1);
+    }
+  }
+
+  if (status == "perdida") {
+    var cpp = localStorage.getItem("cantPartPerdidas");
+    if (cpp != null) {
+      cpp++;
+      localStorage.setItem("cantPartPerdidas", cpp);
+    } else {
+      localStorage.setItem("cantPartPerdidas", 1);
+    }
+  }
+
+}
+
 // Ganaste
 function ganaste() {
+
+  // Abro modal de ganaste
   alert("Ganaste!");
-  imprimirJugadorOculto(jugadorOculto);
+
+  // Imprimo el jugador oculto
+  imprimirJugadorOculto(jugadorOculto, "ganada");
+
+  // Registro en localStorage
+  // registrarPartidaGoP("ganada");
 }
 
 // Perdiste
 function perdiste() {
+
+  // Establezco el input de busqueda por partida perdida
   $("#buscador").prop("placeholder", "Perdiste!");
   $("#buscador").prop("disabled", true);
+
+  // Abro modal de partida perdida
   alert("Perdiste!");
-  imprimirJugadorOculto(jugadorOculto);
+
+  // Imprimo el jugador ocutlo
+  imprimirJugadorOculto(jugadorOculto, "perdida");
+
+  // Registro en localStorage
+  // registrarPartidaGoP("perdida");
 }
 
 // Busqueda de jugador por el dropdown
