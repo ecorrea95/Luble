@@ -44,7 +44,7 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
     let j = jugadores.filter(function(jugador) {
       return jugador.nombre === int[i];
     });
-    imprimirJugador(j);
+    imprimirJugadorCargado(j);
     $("#intentos").removeClass("hide");
     $("#columnasTitulos").removeClass("hide");
   }

@@ -171,6 +171,7 @@ function imprimirJugadorOculto(jugadorOculto) {
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.numero+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.extranjero+'</div>';
   $(i).appendTo("#intentos");
+  $("#buscador").prop("disabled", true);
   return;
 }
 
@@ -182,6 +183,19 @@ function imprimirJugador(jugador) {
     comparoJugadores(jugador[0], jugadorOculto);
     // Verificar si es el jugador oculto
     verificarIntento();
+  }
+}
+
+// Function para imprimir el jugador de los intentos ya cargados
+function imprimirJugadorCargado(jugador) {
+  // Verifico si el jugador ingresado es el jugador oculto
+  if (jugador[0].nombre == jugadorOculto.nombre) {
+    imprimirJugadorOculto(jugadorOculto);
+  } else {
+    // Comparo el jugador ingresado con el jugador oculto
+    comparoJugadores(jugador[0], jugadorOculto);
+    // Verificar si es el jugador oculto
+    verificarIntentoCargado();
   }
 }
 
@@ -227,6 +241,18 @@ function buscarJugador(nombre) {
 function verificarIntento() {
   if (intento > 6) {
     perdiste();
+  } else {
+    $("#buscador").prop("placeholder", "Intento "+intento+"/6...")
+  }
+}
+
+// Funcion de verificar intentos cargados
+function verificarIntentoCargado() {
+  if (intento > 6) {
+    alert("Perdiste");
+    imprimirJugadorOculto(jugadorOculto);
+    $("#buscador").prop("placeholder", "Perdiste!");
+    $("#buscador").prop("disabled", true);
   } else {
     $("#buscador").prop("placeholder", "Intento "+intento+"/6...")
   }
