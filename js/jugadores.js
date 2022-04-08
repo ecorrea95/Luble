@@ -194,8 +194,6 @@ function imprimirJugadorCargado(jugador) {
   } else {
     // Comparo el jugador ingresado con el jugador oculto
     comparoJugadores(jugador[0], jugadorOculto);
-    // Verificar si es el jugador oculto
-    verificarIntentoCargado();
   }
 }
 
@@ -248,11 +246,14 @@ function verificarIntento() {
 
 // Funcion de verificar intentos cargados
 function verificarIntentoCargado() {
-  if (intento > 6) {
-    alert("Perdiste");
-    imprimirJugadorOculto(jugadorOculto);
+  console.log(intento);
+  if (intento == 7) {
+    // alert("Perdiste");
+    console.log("Perdiste");
     $("#buscador").prop("placeholder", "Perdiste!");
     $("#buscador").prop("disabled", true);
+    console.log("Imprimo oculto");
+    imprimirJugadorOculto(jugadorOculto);
   } else {
     $("#buscador").prop("placeholder", "Intento "+intento+"/6...")
   }

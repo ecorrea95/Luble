@@ -47,6 +47,11 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
     imprimirJugadorCargado(j);
     $("#intentos").removeClass("hide");
     $("#columnasTitulos").removeClass("hide");
+
+    if (i == 5) {
+      verificarIntentoCargado();
+    }
   }
+
 
 }
