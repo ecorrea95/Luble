@@ -234,7 +234,6 @@ function verificarIntento() {
 
 // Ganaste
 function ganaste() {
-
   // Abro modal de ganaste
   alert("Ganaste! El jugador oculto es "+jugadorOculto.nombre);
 
@@ -259,12 +258,19 @@ function perdiste() {
   $("#buscador").prop("disabled", true);
 
   // Abro modal de partida perdida
-  alert("Perdiste!");
+  alert("Perdiste! El jugador oculto era "+jugadorOculto.nombre);
 
   // Imprimo el jugador ocutlo
   imprimirJugadorOculto(jugadorOculto);
 
   // Registro en localStorage
+  let cpp = localStorage.getItem('cantPartPerdidas');
+  if (cpp != null) {
+    cpp++;
+    localStorage.setItem('cantPartPerdidas', cpp);
+  } else {
+    localStorage.setItem('cantPartPerdidas', 1);
+  }
 }
 
 // Busqueda de jugador por el dropdown
