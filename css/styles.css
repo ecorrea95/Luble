@@ -123,6 +123,32 @@ body {
   margin: auto;
 }
 
+/* Modal */
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+}
+
+/* Modal Stats */
+.modalStats {
+  width: 40%;
+  height: 50%;
+  margin: auto;
+  margin-top: 5vh;
+  background-color: white;
+  text-align: center;
+}
+
+.statsPartidas {
+  display: inline-block;
+  width: 30%;
+  height: 5rem;
+  border: 2px solid;
+}
+
 /* Footer */
 .footer {
   text-align: center;
