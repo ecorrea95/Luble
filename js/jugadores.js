@@ -3,6 +3,7 @@ var random;
 var intento = 1;
 var jugadorOculto;
 
+// Jugador random del día
 function jugadorRandom() {
   random = Math.floor(Math.random() * jugadores.length);
   // console.log(random, jugadores[random]);
@@ -161,7 +162,7 @@ function comparoJugadores(jugador, jugadorOculto) {
 
 // Impresiones
 // Imprimo el jugador oculto
-function imprimirJugadorOculto(jugadorOculto, status) {
+function imprimirJugadorOculto(jugadorOculto) {
   i = '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.nombre+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)"><img src="'+jugadorOculto.logoEquipo+'" class="logoEquipo" alt="'+jugadorOculto.equipoActual+'">'+jugadorOculto.equipoActualAb+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.posicion+'</div>';
@@ -170,17 +171,13 @@ function imprimirJugadorOculto(jugadorOculto, status) {
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.numero+'</div>';
   i += '<div class="grid-item" style="background-color:var(--verde)">'+jugadorOculto.extranjero+'</div>';
   $(i).appendTo("#intentos");
-
-  registrarPartidaGoP(status);
-
   return;
 }
 
 // Funcion para imprimir el jugador en la variable y comparo con el jugador a adivinar
 function imprimirJugador(jugador) {
   if (jugador[0].nombre == jugadorOculto.nombre) {
-    imprimirJugadorOculto(jugadorOculto);
-    alert("Ganaste! El jugador oculto es "+jugadorOculto.nombre);
+    ganaste();
   } else {
     comparoJugadores(jugador[0], jugadorOculto);
     // Verificar si es el jugador oculto
@@ -235,42 +232,23 @@ function verificarIntento() {
   }
 }
 
-// Registrar partida ganada o perdida
-function registrarPartidaGoP(status) {
-  console.log(status);
-  if (status == "ganada") {
-    var cpg = localStorage.getItem("cantPartGanadas");
-    if (cpg != null) {
-      cpg++;
-      localStorage.setItem("cantPartGanadas", cpg);
-    } else {
-      localStorage.setItem("cantPartGanadas", 1);
-    }
-  }
-
-  if (status == "perdida") {
-    var cpp = localStorage.getItem("cantPartPerdidas");
-    if (cpp != null) {
-      cpp++;
-      localStorage.setItem("cantPartPerdidas", cpp);
-    } else {
-      localStorage.setItem("cantPartPerdidas", 1);
-    }
-  }
-
-}
-
 // Ganaste
 function ganaste() {
 
   // Abro modal de ganaste
-  alert("Ganaste!");
+  alert("Ganaste! El jugador oculto es "+jugadorOculto.nombre);
 
   // Imprimo el jugador oculto
-  imprimirJugadorOculto(jugadorOculto, "ganada");
+  imprimirJugadorOculto(jugadorOculto);
 
   // Registro en localStorage
-  // registrarPartidaGoP("ganada");
+  let cpg = localStorage.getItem('cantPartGanadas');
+  if (cpg != null) {
+    cpg++;
+    localStorage.setItem('cantPartGanadas', cpg);
+  } else {
+    localStorage.setItem('cantPartGanadas', 1);
+  }
 }
 
 // Perdiste
@@ -284,10 +262,9 @@ function perdiste() {
   alert("Perdiste!");
 
   // Imprimo el jugador ocutlo
-  imprimirJugadorOculto(jugadorOculto, "perdida");
+  imprimirJugadorOculto(jugadorOculto);
 
   // Registro en localStorage
-  // registrarPartidaGoP("perdida");
 }
 
 // Busqueda de jugador por el dropdown
