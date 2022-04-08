@@ -264,7 +264,15 @@ function ganaste() {
   alert("Ganaste! El jugador oculto es "+jugadorOculto.nombre);
 
   $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
-  console.log(intento);
+
+  // Guardo en localStorage el intento en el cual adivino
+  var intAd = localStorage.getItem('ganada'+(intento-1)+'');
+  if (intAd != null) {
+    intAd++;
+    localStorage.setItem('ganada'+(intento-1)+'', intAd);
+  } else {
+    localStorage.setItem('ganada'+(intento-1)+'', 1);
+  }
 
   // Imprimo el jugador oculto
   imprimirJugadorOculto(jugadorOculto);
