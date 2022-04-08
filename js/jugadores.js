@@ -198,7 +198,21 @@ function buscarJugador(nombre) {
   localStorage.setItem('intentos', intent);
 
   i = '';
+
+  // Le agrego 1 a la cantidad de intentos
   intento++;
+
+  // Le agrego 1 a la cantidad de partidas si el jugador intenta una vez
+  var cantP = localStorage.getItem('cantidadPartidas');
+  if (intento == 2) {
+    if (cantP != null) {
+      cantP++;
+      localStorage.setItem('cantidadPartidas', cantP);
+    } else {
+      localStorage.setItem('cantidadPartidas', 1);
+    }    
+  }
+
   localStorage.setItem('cantIntentos', intento);
   match = '';
   match = jugadores.filter(function(jugador) {

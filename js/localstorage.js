@@ -13,7 +13,7 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
   localStorage.setItem('dia', diaActual);
   localStorage.setItem('mes', mesActual);
 
-  // Reseteo el localstorage
+  // Reseteo la cantidad de intentos y jugadores adivinados
   localStorage.setItem('cantIntentos', 1);
   localStorage.setItem('intentos', '');
 
