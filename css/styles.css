@@ -135,11 +135,12 @@ body {
 /* Modal Stats */
 .modalStats {
   width: 40%;
-  height: 50%;
   margin: auto;
   margin-top: 5vh;
   background-color: white;
   text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
 }
 
 .statsPartidas {
@@ -147,6 +148,36 @@ body {
   width: 30%;
   height: 5rem;
   border: 2px solid;
+}
+
+.cantPart {
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
+.cantGanInt {
+  width: 24%;
+  display: inline-block;
+  text-align: right;
+}
+
+.progCantGanInt {
+  width: 50%;
+  display: inline-block;
+}
+
+.percCantGanInt {
+  width: 24%;
+  display: inline-block;
+  text-align: left;
+}
+
+progress {
+  width: 95%;
+}
+
+hr {
+  margin: 1rem;
 }
 
 /* Footer */
