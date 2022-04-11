@@ -176,6 +176,35 @@ progress {
   width: 95%;
 }
 
+/* For Chrome or Safari */
+progress::-webkit-progress-bar {
+  background-color: var(--tercero);
+  /* background-color: #eeeeee; */
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--primero) !important;
+}
+
+/* For Firefox */
+progress {
+  background-color: var(--tercero);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(primero) !important;
+}
+
+/* For IE10 */
+progress {
+  background-color: var(--tercero);
+}
+
+progress {
+  background-color: var(--primero);
+}
+
+
 hr {
   margin: 1rem;
 }
