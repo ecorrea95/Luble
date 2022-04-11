@@ -310,6 +310,17 @@ function perdiste() {
   }
 }
 
+// Abrir modal stats
+function abrirModalStats() {
+  $("#modal").removeClass("hide");
+  $("#modalStats").removeClass("hide");
+}
+
+function cerrarModal() {
+  $("#modal").addClass("hide");
+  $("#modalStats").addClass("hide");
+}
+
 // Busqueda de jugador por el dropdown
 $("#buscador").change(function() {
   let jug = $("#buscador").val();

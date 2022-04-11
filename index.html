@@ -10,7 +10,7 @@
     <!-- Navbar -->
     <nav class="navbar">
       <ul>
-        <li>Estadísticas</li>
+        <li onclick="abrirModalStats()">Estadísticas</li>
         <li>¿Cómo jugar?</li>
       </ul>
     </nav>
@@ -39,10 +39,10 @@
     </div>
 
     <!-- Modal background -->
-    <div id="modal" class="modal ">
+    <div id="modal" class="modal hide" onclick="cerrarModal()">
 
       <!-- Modal stats -->
-      <div class="modalStats">
+      <div id="modalStats" class="modalStats hide">
 
         <div id="nomJugOculto">
           <p>El jugador oculto era:</p> <br>
