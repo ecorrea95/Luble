@@ -44,55 +44,60 @@
       <!-- Modal stats -->
       <div class="modalStats">
 
-        <p>El jugador oculto era:</p>
-        <p><strong>Federico Pereiras</strong></p>
-        <br>
+        <div id="nomJugOculto">
+          <p>El jugador oculto era:</p> <br>
+          <p><strong id="nombreJugOculto"></strong></p>
+          <br>
 
-        <hr>
-        <p>Estadísticas</p> <br>
-        <div class="statsPartidas">
-          <span>Jugadas</span> <br>
-          <span class="cantPart" id="valCantJug"></span>
-        </div>
-        <div class="statsPartidas">
-          <span>Ganadas</span> <br>
-          <span class="cantPart" id="valCantGan"></span>
-        </div>
-        <div class="statsPartidas">
-          <span>Perdidas</span> <br>
-          <span class="cantPart" id="valCantPerd"></span>
+          <hr>
         </div>
 
-        <hr>
-        <p>Distribución</p> <br>
-
-        <div class="cantGanInt">
-          <p class="">1: </p>
-          <p class="">2: </p>
-          <p class="">3: </p>
-          <p class="">4: </p>
-          <p class="">5: </p>
-          <p class="">6: </p>
-        </div>
-        <div class="progCantGanInt">
-          <progress id="prog1" value="" max="100"></progress>
-          <progress id="prog2" value="" max="100"></progress>
-          <progress id="prog3" value="" max="100"></progress>
-          <progress id="prog4" value="" max="100"></progress>
-          <progress id="prog5" value="" max="100"></progress>
-          <progress id="prog6" value="" max="100"></progress>
-        </div>
-        <div class="percCantGanInt">
-          <p id="prog1Val"></p>
-          <p id="prog2Val"></p>
-          <p id="prog3Val"></p>
-          <p id="prog4Val"></p>
-          <p id="prog5Val"></p>
-          <p id="prog6Val"></p>
+        <div id="statsPartidas">
+          <p>Estadísticas</p> <br>
+          <div class="statsPartidas">
+            <span>Jugadas</span> <br>
+            <span class="cantPart" id="valCantJug"></span>
+          </div>
+          <div class="statsPartidas">
+            <span>Ganadas</span> <br>
+            <span class="cantPart" id="valCantGan"></span>
+          </div>
+          <div class="statsPartidas">
+            <span>Perdidas</span> <br>
+            <span class="cantPart" id="valCantPerd"></span>
+          </div>
+          <hr>
         </div>
 
+        <div id="distribStats">
+          <p>Distribución</p> <br>
+          <div class="cantGanInt">
+            <p class="">1: </p>
+            <p class="">2: </p>
+            <p class="">3: </p>
+            <p class="">4: </p>
+            <p class="">5: </p>
+            <p class="">6: </p>
+          </div>
+          <div class="progCantGanInt">
+            <progress id="prog1" value="" max="100"></progress>
+            <progress id="prog2" value="" max="100"></progress>
+            <progress id="prog3" value="" max="100"></progress>
+            <progress id="prog4" value="" max="100"></progress>
+            <progress id="prog5" value="" max="100"></progress>
+            <progress id="prog6" value="" max="100"></progress>
+          </div>
+          <div class="percCantGanInt">
+            <p id="prog1Val"></p>
+            <p id="prog2Val"></p>
+            <p id="prog3Val"></p>
+            <p id="prog4Val"></p>
+            <p id="prog5Val"></p>
+            <p id="prog6Val"></p>
+          </div>
+          <hr>
 
-        <hr>
+        </div>
         <p>Compartir!</p>
 
       </div>

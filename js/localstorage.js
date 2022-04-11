@@ -58,6 +58,8 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
 }
 
 $(document).ready(function() {
+  $("#nombreJugOculto").text(jugadorOculto.nombre);
+
   // Traigo todos los stats
   var statCantPart = localStorage.getItem('cantidadPartidas');
   $("#valCantJug").text(statCantPart);
@@ -70,27 +72,27 @@ $(document).ready(function() {
 
   var gan1 = localStorage.getItem('ganada1');
   $("#prog1").val(gan1/statCantPartG*100);
-  $("#prog1Val").text(gan1/statCantPartG*100+"%");
+  $("#prog1Val").text((gan1/statCantPartG*100).toFixed(2)+"%");
 
   var gan2 = localStorage.getItem('ganada2');
   $("#prog2").val(gan2/statCantPartG*100);
-  $("#prog2Val").text(gan2/statCantPartG*100+"%");
+  $("#prog2Val").text((gan2/statCantPartG*100).toFixed(2)+"%");
 
   var gan3 = localStorage.getItem('ganada3');
   $("#prog3").val(gan3/statCantPartG*100);
-  $("#prog3Val").text(gan3/statCantPartG*100+"%");
+  $("#prog3Val").text((gan3/statCantPartG*100).toFixed(2)+"%");
 
   var gan4 = localStorage.getItem('ganada4');
   $("#prog4").val(gan4/statCantPartG*100);
-  $("#prog4Val").text(gan4/statCantPartG*100+"%");
+  $("#prog4Val").text((gan4/statCantPartG*100).toFixed(2)+"%");
 
   var gan5 = localStorage.getItem('ganada5');
   $("#prog5").val(gan5/statCantPartG*100);
-  $("#prog5Val").text(gan5/statCantPartG*100+"%");
+  $("#prog5Val").text((gan5/statCantPartG*100).toFixed(2)+"%");
 
   var gan6 = localStorage.getItem('ganada6');
   $("#prog6").val(gan6/statCantPartG*100);
-  $("#prog6Val").text(gan6/statCantPartG*100+"%");
+  $("#prog6Val").text((gan6/statCantPartG*100).toFixed(2)+"%");
 
   console.log("Cantidad partidas: ", statCantPart);
   console.log("Cantidad partidas ganadas: ", statCantPartG);
