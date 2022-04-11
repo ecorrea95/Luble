@@ -60,15 +60,21 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
 $(document).ready(function() {
   $("#nombreJugOculto").text(jugadorOculto.nombre);
 
+  updateStats();
+
+});
+
+// Update stats
+function updateStats() {
   // Traigo todos los stats
   var statCantPart = localStorage.getItem('cantidadPartidas');
   $("#valCantJug").text(statCantPart);
 
   var statCantPartG = localStorage.getItem('cantPartGanadas');
-  $("#valCantGan").text(statCantPartG/statCantPart*100+"%");
+  $("#valCantGan").text((statCantPartG/statCantPart*100).toFixed(0)+"%");
 
   var statCantPartP = localStorage.getItem('cantPartPerdidas');
-  $("#valCantPerd").text(statCantPartP/statCantPart*100+"%");
+  $("#valCantPerd").text((statCantPartP/statCantPart*100).toFixed(0)+"%");
 
   var gan1 = localStorage.getItem('ganada1');
   $("#prog1").val(gan1/statCantPartG*100);
@@ -93,14 +99,4 @@ $(document).ready(function() {
   var gan6 = localStorage.getItem('ganada6');
   $("#prog6").val(gan6/statCantPartG*100);
   $("#prog6Val").text((gan6/statCantPartG*100).toFixed(2)+"%");
-
-  console.log("Cantidad partidas: ", statCantPart);
-  console.log("Cantidad partidas ganadas: ", statCantPartG);
-  console.log("Cantidad partidas perdidas: ", statCantPartP);
-  console.log("Ganadas en 1: ", gan1);
-  console.log("Ganadas en 2: ", gan2);
-  console.log("Ganadas en 3: ", gan3);
-  console.log("Ganadas en 4: ", gan4);
-  console.log("Ganadas en 5: ", gan5);
-  console.log("Ganadas en 6: ", gan6);
-});
+}

@@ -265,6 +265,7 @@ function ganaste() {
 
   $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
 
+
   // Guardo en localStorage el intento en el cual adivino
   var intAd = localStorage.getItem('ganada'+(intento-1)+'');
   if (intAd != null) {
@@ -273,6 +274,9 @@ function ganaste() {
   } else {
     localStorage.setItem('ganada'+(intento-1)+'', 1);
   }
+
+  // Actualizo las stats
+  updateStats();
 
   // Imprimo el jugador oculto
   imprimirJugadorOculto(jugadorOculto);
