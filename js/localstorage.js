@@ -7,6 +7,11 @@ var intentos = [];
 var diaGuardado = localStorage.getItem('dia');
 var mesGuardado = localStorage.getItem('mes');
 
+var status = localStorage.getItem('status');
+if (status == "ganado" || status == "perdido") {
+  $("#nomJugOculto").removeClass("hide");
+}
+
 if (diaActual != diaGuardado || mesActual != mesGuardado) {
 
   // Guardo el dia y el mes
@@ -16,7 +21,8 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
   // Reseteo la cantidad de intentos y jugadores adivinados
   localStorage.setItem('cantIntentos', 1);
   localStorage.setItem('intentos', '');
-
+  localStorage.setItem('status', '');
+  $("#nomJugOculto").addClass("hide");
 
   console.log("Es otro dia! Hay un nuevo jugador oculto!");
   localStorage.setItem('intentos', intentos);
@@ -37,7 +43,6 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
 
   jugadorOculto = jugadorOculto[0];
 
-
   int = int.split(',');
 
   for (let i=0; i<int.length; i++) {
@@ -50,7 +55,6 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
       $("#columnasTitulos").removeClass("hide");
       $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
     }
-
 
     if (i == 5) {
       verificarIntentoCargado();
