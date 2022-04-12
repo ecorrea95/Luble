@@ -278,12 +278,6 @@ function ganaste() {
     localStorage.setItem('ganada'+(intento-1)+'', 1);
   }
 
-  // Actualizo las stats
-  updateStats();
-
-  // Imprimo el jugador oculto
-  imprimirJugadorOculto(jugadorOculto);
-
   // Registro en localStorage
   let cpg = localStorage.getItem('cantPartGanadas');
   if (cpg != null) {
@@ -292,6 +286,12 @@ function ganaste() {
   } else {
     localStorage.setItem('cantPartGanadas', 1);
   }
+
+  // Actualizo las stats
+  updateStats();
+
+  // Imprimo el jugador oculto
+  imprimirJugadorOculto(jugadorOculto);
 }
 
 // Perdiste
@@ -315,6 +315,10 @@ function perdiste() {
   } else {
     localStorage.setItem('cantPartPerdidas', 1);
   }
+
+  // Actualizo las stats
+  updateStats();
+
 }
 
 // Abrir modal stats
