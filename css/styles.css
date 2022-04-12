@@ -204,10 +204,46 @@ progress {
   background-color: var(--primero);
 }
 
-
 hr {
   margin: 1rem;
 }
+
+/* Modal como jugar */
+.modalComoJugar {
+  width: 70%;
+  margin: auto;
+  margin-top: 5vh;
+  background-color: white;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.modalComoJugar ul {
+  margin-bottom: 1rem;
+}
+
+.modalComoJugar ul li {
+  margin-block: 0.5rem;
+  list-style-type: square;
+  color: red;
+}
+
+.verde {
+  background-color: var(--verde);
+}
+
+.amarillo {
+  background-color: var(--amarillo);
+}
+
+.titleComoJugar {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:var(--primero);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 
 /* Footer */
 .footer {
