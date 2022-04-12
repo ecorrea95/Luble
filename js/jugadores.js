@@ -21,13 +21,19 @@ $(j).appendTo('#opcionesJ');
 // COMPARACIONES
 // Comparo equipo
 function comparoEquipos(jugador, jugadorOculto) {
+  let resultado = '<div class="grid-item"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
+  // Si es el mismo equipo
   if (jugador.equipoActual == jugadorOculto.equipoActual) {
-    i += '<div class="grid-item" style="background-color:var(--verde)"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
-  } else {
-    // Comparo equipo actual con equipos pasados
-    i += '<div class="grid-item"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
-
+    resultado = '<div class="grid-item" style="background-color:var(--verde)"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
   }
+  // Si jugó en el equipo en el pasado
+  for (let i=0; i<jugadorOculto.equiposPasado.length; i++) {
+    // console.log(jugadorOculto.equiposPasado[i]);
+    if (jugador.equipoActual == jugadorOculto.equiposPasado[i]) {
+      resultado = '<div class="grid-item" style="background-color:var(--amarillo)"><img src="'+jugador.logoEquipo+'" class="logoEquipo" alt="'+jugador.equipoActual+'">'+jugador.equipoActualAb+'</div>';
+    }
+  }
+  i += resultado;
 }
 
 // Compario posiciones
@@ -62,16 +68,13 @@ function comparoAltura(jugador, jugadorOculto) {
     resultado = '<div class="grid-item" style="background-color:var(--verde)">'+jugador.altura+'cm</div>';
   }
   // Si la altura es 10cm más baja
-
   if (jugador.altura < jugadorOculto.altura && (jugadorOculto.altura-jugador.altura) <= 10) {
     resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm<br>&uarr;</div>';
   }
-
   // Si la altura es 10cm más alta
   if (jugador.altura > jugadorOculto.altura && (jugador.altura-jugadorOculto.altura) <= 10) {
     resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.altura+'cm<br>&darr;</div>';
   }
-
   i += resultado;
 }
 

@@ -1686,7 +1686,7 @@ const jugadores = [
     equipoActual: "Urupan",
     equipoActualAb: "URU",
     logoEquipo: "images/urupan.png",
-    equiposPasado: ["Trouville", "Bigua"],
+    equiposPasado: ["Trouville", "Biguá"],
     posicion: "ES",
     posicionNumero: 2,
     altura: 193,
