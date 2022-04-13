@@ -11,7 +11,7 @@
     <nav class="navbar">
       <ul>
         <li onclick="abrirModalStats()">Estadísticas</li>
-        <li>¿Cómo jugar?</li>
+        <li onclick="abrirModalComoJugar()">¿Cómo jugar?</li>
       </ul>
     </nav>
 
@@ -39,7 +39,7 @@
     </div>
 
     <!-- Modal background -->
-    <div id="modal" class="modal" onclick="cerrarModal()">
+    <div id="modal" class="modal hide" onclick="cerrarModal()">
 
       <!-- Modal stats -->
       <div id="modalStats" class="modalStats hide">
@@ -103,7 +103,7 @@
       </div>
 
       <!-- Modal como jugar -->
-      <div id="modalComoJugar" class="modalComoJugar">
+      <div id="modalComoJugar" class="modalComoJugar hide">
         <p class="titleComoJugar">Adiviná el jugador oculto de la LUB!</p>
         <ul>
           <li>Tenés <strong>6 intentos</strong> para adivinarlo</li>
@@ -111,7 +111,7 @@
           <li><span class="amarillo">Amarillo</span> en la columna <strong>equipo</strong> significa que el jugador oculto jugó en ese equipo (puede haber jugado en LUB o Metro)</li>
           <li><span class="amarillo">Amarillo</span> en la columna <strong>posición</strong> significa que el jugador juega a una posición cercana a la ingresada</li>
           <li><span class="amarillo">Amarillo</span> en la columna <strong>altura</strong> significa que el jugador mide entre 1cm y 10cm más o menos</li>
-          <li><span class="amarillo">Amarillo</span> en la columna <strong>edad</strong> significa que el jugador es 2 años mayor o menor</li>
+          <li><span class="amarillo">Amarillo</span> en la columna <strong>edad</strong> significa que el jugador es 1 o 2 años mayor o menor</li>
           <li><span class="amarillo">Amarillo</span> en la columna <strong>número</strong> significa que la diferencia con el número del jugador está entre 1 y 2</li>
         </ul>
         <p style="text-align:center; color:var(--primero);">Hay un jugador oculto cada día!</p>

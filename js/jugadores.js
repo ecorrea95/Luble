@@ -329,15 +329,22 @@ function perdiste() {
 
 }
 
-// Abrir modal stats
+// Abrir/cerrar modal stats
 function abrirModalStats() {
   $("#modal").removeClass("hide");
   $("#modalStats").removeClass("hide");
 }
 
+// Abrir/cerrar modal como jugar
+function abrirModalComoJugar() {
+  $("#modal").removeClass("hide");
+  $("#modalComoJugar").removeClass("hide");
+}
+
 function cerrarModal() {
   $("#modal").addClass("hide");
   $("#modalStats").addClass("hide");
+  $("#modalComoJugar").addClass("hide");
 }
 
 // Busqueda de jugador por el dropdown

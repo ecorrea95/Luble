@@ -12,6 +12,12 @@ if (status == "ganado" || status == "perdido") {
   $("#nomJugOculto").removeClass("hide");
 }
 
+// Check si es la primera vez que el usuario entra
+var u = localStorage.getItem('cantIntentos');
+if (u == null) {
+  abrirModalComoJugar();
+}
+
 if (diaActual != diaGuardado || mesActual != mesGuardado) {
 
   // Guardo el dia y el mes
