@@ -59,7 +59,12 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
       imprimirJugadorCargado(j);
       $("#intentos").removeClass("hide");
       $("#columnasTitulos").removeClass("hide");
-      $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+      let status = localStorage.getItem('status');
+      if (status == "ganado") {
+        $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+      } else {
+        $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
+      }
     }
 
     if (i == 5) {
