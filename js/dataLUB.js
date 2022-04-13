@@ -1793,3 +1793,14 @@ const jugadores = [
     extranjero: "Si"
   }
 ]
+
+// Ingreso las opcines en el input
+$( function() {
+  var availableTags = [];
+  for (let i=0; i<jugadores.length; i++) {
+    availableTags.push(jugadores[i].nombre);
+  }
+  $( "#buscador" ).autocomplete({
+    source: availableTags
+  });
+} );

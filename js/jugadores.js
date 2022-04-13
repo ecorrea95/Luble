@@ -10,14 +10,6 @@ function jugadorRandom() {
   jugadorOculto = jugadores[random];
 }
 
-// Agrego todos los datalist al input de search
-var j = '';
-for (let i=0; i<jugadores.length; i++) {
-  j += '<option value="'+jugadores[i].nombre+'" onclick="buscarJugador('+jugadores[i].nombre+')"></option>';
-}
-$(j).appendTo('#opcionesJ');
-
-
 // COMPARACIONES
 // Comparo equipo
 function comparoEquipos(jugador, jugadorOculto) {
