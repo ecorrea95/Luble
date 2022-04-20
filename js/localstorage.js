@@ -85,14 +85,25 @@ $(document).ready(function() {
 function updateStats() {
   // Traigo todos los stats
   var statCantPart = localStorage.getItem('cantidadPartidas');
-  $("#valCantJug").text(statCantPart);
-  // console.log(statCantPart);
+  if (statCantPart == null) {
+    $("#valCantJug").text("0");
+  } else {
+    $("#valCantJug").text(statCantPart);
+  }
 
   var statCantPartG = localStorage.getItem('cantPartGanadas');
-  $("#valCantGan").text((statCantPartG/statCantPart*100).toFixed(0)+"%");
+  if (statCantPartG == null) {
+    $("#valCantGan").text("-");
+  } else {
+    $("#valCantGan").text((statCantPartG/statCantPart*100).toFixed(0)+"%");
+  }
 
   var statCantPartP = localStorage.getItem('cantPartPerdidas');
-  $("#valCantPerd").text((statCantPartP/statCantPart*100).toFixed(0)+"%");
+  if (statCantPartP == null) {
+    $("#valCantPerd").text("-");
+  } else {
+    $("#valCantPerd").text((statCantPartP/statCantPart*100).toFixed(0)+"%");
+  }
 
   var gan1 = localStorage.getItem('ganada1');
   if (gan1 == null) {
