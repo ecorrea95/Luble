@@ -130,6 +130,16 @@ body {
   text-align: center;
 }
 
+/* Grid responsive */
+@media screen and (max-width: 920px) {
+  .grid-item:nth-child(7n - 6) {
+    grid-column: 1/7;
+  }
+  .grid-container {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
 /* Imagenes */
 .logoEquipo {
   width: 5rem;
