@@ -146,6 +146,23 @@ body {
   background-color: rgba(0,0,0,0.6);
 }
 
+.closeContainer {
+  width: 100%;
+  text-align: right;
+}
+
+.close {
+  font-size: 2rem;
+  position: absolute;
+  margin-top: -2rem;
+  cursor: pointer;
+  color: var(--primero);
+}
+
+.close:hover {
+  color: var(--cuarto);
+}
+
 /* Modal Stats */
 .modalStats {
   width: 40%;
@@ -314,7 +331,7 @@ hr {
     height: 82%;
   }
   .modalStats {
-    width: 80%;
+    width: 90%;
     padding: 0.5rem;
   }
 }

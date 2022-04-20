@@ -43,11 +43,13 @@
     </div>
 
     <!-- Modal background -->
-    <div id="modal" class="modal hide" onclick="cerrarModal()">
+    <div id="modal" class="modal hide">
 
       <!-- Modal stats -->
       <div id="modalStats" class="modalStats hide">
-
+        <div class="closeContainer" style="width: 96%;">
+          <span class="close" style="margin-top: -1rem; margin-right: 1rem;" onclick="cerrarModal()">&times</span>
+        </div>
         <div id="nomJugOculto" class="hide">
           <p>El jugador oculto era:</p> <br>
           <p><strong id="nombreJugOculto"></strong></p>
@@ -108,6 +110,9 @@
 
       <!-- Modal como jugar -->
       <div id="modalComoJugar" class="modalComoJugar hide">
+        <div class="closeContainer">
+          <span class="close" onclick="cerrarModal()">&times</span>
+        </div>
         <p class="titleComoJugar">Adiviná el jugador oculto de la LUB!</p>
         <ul>
           <li>Tenés <strong>6 intentos</strong> para adivinarlo</li>
