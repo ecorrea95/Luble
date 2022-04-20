@@ -114,7 +114,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Chad Posthumus",
+    nombre: "Martin Krampelj",
     imagen: "images/",
     equipoActual: "Aguada",
     equipoActualAb: "AGU",
@@ -122,9 +122,9 @@ const jugadores = [
     equiposPasado: [""],
     posicion: "P",
     posicionNumero: 5,
-    altura: 211,
+    altura: 206,
     numero: 27,
-    edad: 31,
+    edad: 27,
     extranjero: "Si"
   },
   // Biguá
@@ -1539,7 +1539,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Prince Ibeh",
+    nombre: "Tyler Harris",
     imagen: "images/",
     equipoActual: "Trouville",
     equipoActualAb: "TRO",
@@ -1547,9 +1547,9 @@ const jugadores = [
     equiposPasado: [""],
     posicion: "P",
     posicionNumero: 5,
-    altura: 209,
+    altura: 208,
     numero: 1,
-    edad: 27,
+    edad: 28,
     extranjero: "Si"
   },
   // Urunday Universitario
