@@ -130,16 +130,6 @@ body {
   text-align: center;
 }
 
-/* Grid responsive */
-@media screen and (max-width: 920px) {
-  .grid-item:nth-child(7n - 6) {
-    grid-column: 1/7;
-  }
-  .grid-container {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
-
 /* Imagenes */
 .logoEquipo {
   width: 5rem;
@@ -267,7 +257,6 @@ hr {
   text-align: center;
 }
 
-
 /* Footer */
 .footer {
   text-align: center;
@@ -288,4 +277,44 @@ hr {
 
 .footer a:hover {
   text-decoration: underline 3px var(--segundo);
+}
+
+/* Responsive */
+@media screen and (max-width: 920px) {
+  .navbar ul li {
+    margin-inline: 0.7rem;
+  }
+  .grid-container {
+    grid-template-columns: 20% 14% 20% 16% 16% 14%;
+  }
+  .grid-item:nth-child(7n - 6) {
+    grid-column: 1/7;
+  }
+  .grid-item {
+    padding: 10px;
+  }
+  .logoEquipo {
+    width: 3rem!important;
+  }
+  .search {
+    width: 85%;
+  }
+  .nombreResponsive {
+    display: none;
+  }
+  .modal {
+    width: 101%;
+  }
+  .modalComoJugar {
+    width: 80%;
+    padding: 0;
+    padding-inline: 1.7rem;
+    font-size: 1rem;
+    overflow: auto;
+    height: 82%;
+  }
+  .modalStats {
+    width: 80%;
+    padding: 0.5rem;
+  }
 }
