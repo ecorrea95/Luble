@@ -239,6 +239,10 @@ hr {
   margin: 1rem;
 }
 
+.timer {
+  font-weight: bold;
+}
+
 /* Modal como jugar */
 .modalComoJugar {
   width: 70%;

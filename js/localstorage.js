@@ -10,6 +10,7 @@ var mesGuardado = localStorage.getItem('mes');
 var status = localStorage.getItem('status');
 if (status == "ganado" || status == "perdido") {
   $("#nomJugOculto").removeClass("hide");
+  $("#nuevoJugTimer").removeClass("hide");
 }
 
 // Check si es la primera vez que el usuario entra
