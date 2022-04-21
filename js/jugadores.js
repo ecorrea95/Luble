@@ -256,7 +256,7 @@ function verificarIntentoCargado() {
 // Ganaste
 function ganaste() {
   // Abro modal de ganaste
-
+  $("#mensjGan").removeClass("hide");
 
   $("#nuevoJugTimer").removeClass("hide");
   abrirModalStats();
@@ -299,7 +299,7 @@ function perdiste() {
   $("#buscador").prop("disabled", true);
 
   // Abro modal de partida perdida
-
+  $("#mensjPerd").removeClass("hide");
 
   // Imprimo el jugador ocutlo
   imprimirJugadorOculto(jugadorOculto);
