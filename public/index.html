@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+</html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Luble</title>
+    
     <link rel="stylesheet" href="css/styles.css">
+    <!-- <link href="/css/styles.css" /> -->
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
   </head>
   <body>
 
-    <!-- Navbar -->
     <nav class="navbar">
       <ul>
         <li onclick="abrirModalStats()">Estadísticas</li>
@@ -19,17 +22,14 @@
       </ul>
     </nav>
 
-    <!-- Título -->
     <h1 class="title">Luble</h1>
     <p class="subtitle">¡Adivina el jugador de la LUB!</p>
 
-    <!-- Input de búsqueda -->
     <div class="searchContainer">
       <input id="buscador" list="opcionesJ" class="search" placeholder="Intento 1/6...">
     </div>
 
 
-    <!-- Intentos -->
     <div id="columnasTitulos" class="grid-container hide" style="position:sticky; top:5vh;">
       <div class="grid-item nombreResponsive" style="background-color:#c1c2c3;">Nombre</div>
       <div class="grid-item" style="background-color:#c1c2c3;">Equipo</div>
@@ -42,10 +42,8 @@
     <div id="intentos" class="grid-container hide" style="padding-top: 0;">
     </div>
 
-    <!-- Modal background -->
     <div id="modal" class="modal hide">
 
-      <!-- Modal stats -->
       <div id="modalStats" class="modalStats hide">
         <div class="closeContainer" style="width: 96%;">
           <span class="close" style="margin-top: -1rem; margin-right: 1rem;" onclick="cerrarModal()">&times</span>
@@ -55,7 +53,6 @@
           <p id="mensjGan" class="mensjPerGan hide">¡Ganaste!</p>
           <p>El jugador oculto era:</p>
           <p><strong id="nombreJugOculto"></strong></p>
-          <!-- <br> -->
 
           <hr>
         </div>
@@ -113,7 +110,6 @@
         </div>
       </div>
 
-      <!-- Modal como jugar -->
       <div id="modalComoJugar" class="modalComoJugar hide">
         <div class="closeContainer">
           <span class="close" onclick="cerrarModal()">&times</span>
@@ -133,12 +129,10 @@
 
     </div>
 
-    <!-- Footer -->
     <footer class="footer">
       <span>Hecho por <a href="https://emiliano-correa.com/" target="_blank">Emiliano Correa</a></span>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
