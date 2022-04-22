@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ecorrea95/Luble#readme",
   "dependencies": {
     "ejs": "^3.1.7",
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "node-schedule": "^2.1.0"
   }
 }

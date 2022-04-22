@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
+const schedule = require('node-schedule');
 
 app.engine('html', require('ejs').renderFile);
 
@@ -1832,3 +1833,6 @@ function jugadorRandom() {
 
 jugadorRandom();
 
+const job = schedule.scheduleJob('0 0 * * * *', function(){
+  jugadorRandom();
+});
