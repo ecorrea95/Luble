@@ -7,7 +7,6 @@
     <title>Luble</title>
     
     <link rel="stylesheet" href="css/styles.css">
-    <!-- <link href="/css/styles.css" /> -->
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
@@ -24,6 +23,20 @@
 
     <h1 class="title">Luble</h1>
     <p class="subtitle">¡Adivina el jugador de la LUB!</p>
+
+    <div id="test" class="hide">
+    </div>
+    <script type="text/javascript">
+      let url="http://localhost:8001/test";
+      fetch(url).then(response => response.json())
+      .then( (result) => {
+          // console.log('success:', result)
+          let div=document.getElementById('test');
+          div.innerHTML=`${result.jugadorOculto}`;
+      })
+      .catch(error => console.log('error:', error));
+  </script>
+
 
     <div class="searchContainer">
       <input id="buscador" list="opcionesJ" class="search" placeholder="Intento 1/6...">
@@ -139,5 +152,5 @@
     <script type="text/javascript" src="js/dataLUB.js"></script>
     <script type="text/javascript" src="js/jugadores.js"></script>
     <script type="text/javascript" src="js/localstorage.js"></script>
-  </body>
+    </body>
 </html>

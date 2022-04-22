@@ -33,16 +33,16 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
 
   console.log("Es otro dia! Hay un nuevo jugador oculto!");
   localStorage.setItem('intentos', intentos);
-  jugadorRandom();
+  // jugadorRandom();
   console.log("Jugador Oculto: ", jugadorOculto.nombre);
   localStorage.setItem('jugadorOculto', jugadorOculto.nombre);
 
 } else {
 
-  let int = localStorage.getItem('intentos');
-  let jO = localStorage.getItem('jugadorOculto');
+  var int = localStorage.getItem('intentos');
+  var jO = localStorage.getItem('jugadorOculto');
   intento = localStorage.getItem('cantIntentos');
-  console.log("J oculto: ",jO)
+  // console.log("J oculto: ",jO)
 
   jugadorOculto = jugadores.filter(function(jugador) {
     return jugador.nombre === jO;
@@ -52,26 +52,26 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
 
   int = int.split(',');
 
-  for (let i=0; i<int.length; i++) {
-    let j = jugadores.filter(function(jugador) {
-      return jugador.nombre === int[i];
-    });
-    if (int != '') {
-      imprimirJugadorCargado(j);
-      $("#intentos").removeClass("hide");
-      $("#columnasTitulos").removeClass("hide");
-      let status = localStorage.getItem('status');
-      if (status == "ganado") {
-        $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
-      } else {
-        $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
-      }
-    }
+  // for (let i=0; i<int.length; i++) {
+  //   let j = jugadores.filter(function(jugador) {
+  //     return jugador.nombre === int[i];
+  //   });
+  //   if (int != '') {
+  //     imprimirJugadorCargado(j);
+  //     $("#intentos").removeClass("hide");
+  //     $("#columnasTitulos").removeClass("hide");
+  //     let status = localStorage.getItem('status');
+  //     if (status == "ganado") {
+  //       $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+  //     } else {
+  //       $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
+  //     }
+  //   }
 
-    if (i == 5) {
-      verificarIntentoCargado();
-    }
-  }
+  //   if (i == 5) {
+  //     verificarIntentoCargado();
+  //   }
+  // }
 
 }
 

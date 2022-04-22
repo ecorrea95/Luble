@@ -4,11 +4,42 @@ var intento = 1;
 var jugadorOculto;
 
 // Jugador random del día
-function jugadorRandom() {
-  random = Math.floor(Math.random() * jugadores.length);
-  // console.log(random, jugadores[random]);
-  jugadorOculto = jugadores[random];
-}
+// function jugadorRandom() {
+//   random = Math.floor(Math.random() * jugadores.length);
+//   // console.log(random, jugadores[random]);
+//   jugadorOculto = jugadores[random];
+// }
+
+$(document).ready(function() {
+  let j = $("#test").text();
+  for (let i=0; i<jugadores.length; i++) {
+    if (j == jugadores[i].nombre) {
+      jugadorOculto = jugadores[i];
+    }
+  }
+  console.log(jugadorOculto);
+
+  for (let i=0; i<int.length; i++) {
+    let j = jugadores.filter(function(jugador) {
+      return jugador.nombre === int[i];
+    });
+    if (int != '') {
+      imprimirJugadorCargado(j);
+      $("#intentos").removeClass("hide");
+      $("#columnasTitulos").removeClass("hide");
+      let status = localStorage.getItem('status');
+      if (status == "ganado") {
+        $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+      } else {
+        $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
+      }
+    }
+
+    if (i == 5) {
+      verificarIntentoCargado();
+    }
+  }
+});
 
 // COMPARACIONES
 // Comparo equipo
@@ -183,6 +214,8 @@ function imprimirJugador(jugador) {
 
 // Function para imprimir el jugador de los intentos ya cargados
 function imprimirJugadorCargado(jugador) {
+  console.log(jugador[0].nombre)
+  console.log(jugadorOculto);
   // Verifico si el jugador ingresado es el jugador oculto
   if (jugador[0].nombre == jugadorOculto.nombre) {
     imprimirJugadorOculto(jugadorOculto);
