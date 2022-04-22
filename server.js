@@ -1,3 +1,4 @@
+var PORT = process.env.PORT || 8001;
 var express = require('express');
 var app = express();
 var server = require('http').Server(app);
@@ -19,7 +20,7 @@ app.get('/render',(req,res)=>{
   res.sendFile(__dirname +"/index.html");
 })
 
-server.listen(8001, function () {
+server.listen(PORT, function () {
   console.log(`Listening on ${server.address().port}`);
 });
 
