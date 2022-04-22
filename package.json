@@ -1,0 +1,23 @@
+{
+  "name": "luble",
+  "version": "1.0.0",
+  "description": "\"Juego estilo wordle donde el objetivo es adivinar el jugador oculto del dia de la LUB\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecorrea95/Luble.git"
+  },
+  "author": "Emiliano Correa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecorrea95/Luble/issues"
+  },
+  "homepage": "https://github.com/ecorrea95/Luble#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
