@@ -34,6 +34,7 @@
         let div=document.getElementById('test');
         div.innerHTML=`${result.jugadorOculto}`;
         $("#nombreJugOculto").text(result.jugadorOculto);
+        console.log(result.jugadorOculto);
       })
       .catch(error => console.log('error:', error));
   </script>
