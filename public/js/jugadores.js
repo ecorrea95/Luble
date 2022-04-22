@@ -214,8 +214,6 @@ function imprimirJugador(jugador) {
 
 // Function para imprimir el jugador de los intentos ya cargados
 function imprimirJugadorCargado(jugador) {
-  console.log(jugador[0].nombre)
-  console.log(jugadorOculto);
   // Verifico si el jugador ingresado es el jugador oculto
   if (jugador[0].nombre == jugadorOculto.nombre) {
     imprimirJugadorOculto(jugadorOculto);

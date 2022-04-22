@@ -76,7 +76,6 @@ if (diaActual != diaGuardado || mesActual != mesGuardado) {
 }
 
 $(document).ready(function() {
-  $("#nombreJugOculto").text(jugadorOculto.nombre);
 
   updateStats();
 
