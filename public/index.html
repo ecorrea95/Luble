@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+</html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Luble</title>
+    
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+
+  </head>
+  <body>
+
+    <nav class="navbar">
+      <ul>
+        <li onclick="abrirModalStats()">Estadísticas</li>
+        <li onclick="abrirModalComoJugar()">¿Cómo jugar?</li>
+      </ul>
+    </nav>
+
+    <h1 class="title">Luble</h1>
+    <p class="subtitle">¡Adivina el jugador de la LUB!</p>
+
+    <div id="test" class="hide">
+    </div>
+    <script type="text/javascript">
+      let url="http://localhost:8001/test";
+      fetch(url).then(response => response.json())
+      .then( (result) => {
+          // console.log('success:', result)
+          let div=document.getElementById('test');
+          div.innerHTML=`${result.jugadorOculto}`;
+      })
+      .catch(error => console.log('error:', error));
+  </script>
+
+
+    <div class="searchContainer">
+      <input id="buscador" list="opcionesJ" class="search" placeholder="Intento 1/6...">
+      <button class="btnBuscar">Buscar!</button>
+    </div>
+
+
+    <div id="columnasTitulos" class="grid-container hide" style="position:sticky; top:5vh;">
+      <div class="grid-item nombreResponsive" style="background-color:#c1c2c3;">Nombre</div>
+      <div class="grid-item" style="background-color:#c1c2c3;">Equipo</div>
+      <div class="grid-item" style="background-color:#c1c2c3;">Pos</div>
+      <div class="grid-item" style="background-color:#c1c2c3;">Alt</div>
+      <div class="grid-item" style="background-color:#c1c2c3;">Edad</div>
+      <div class="grid-item" style="background-color:#c1c2c3;">Num</div>
+      <div class="grid-item" style="background-color:#c1c2c3;">Ext</div>
+    </div>
+    <div id="intentos" class="grid-container hide" style="padding-top: 0;">
+    </div>
+
+    <div id="modal" class="modal hide">
+
+      <div id="modalStats" class="modalStats hide">
+        <div class="closeContainer" style="width: 96%;">
+          <span class="close" style="margin-top: -1rem; margin-right: 1rem;" onclick="cerrarModal()">&times</span>
+        </div>
+        <div id="nomJugOculto" class="hide">
+          <p id="mensjPerd" class="mensjPerGan hide">¡Perdiste!</p>
+          <p id="mensjGan" class="mensjPerGan hide">¡Ganaste!</p>
+          <p>El jugador oculto era:</p>
+          <p><strong id="nombreJugOculto"></strong></p>
+
+          <hr>
+        </div>
+
+        <div id="statsPartidas">
+          <p>Estadísticas</p> <br>
+          <div class="statsPartidas">
+            <span>Jugadas</span> <br>
+            <span class="cantPart" id="valCantJug"></span>
+          </div>
+          <div class="statsPartidas">
+            <span>Ganadas</span> <br>
+            <span class="cantPart" id="valCantGan"></span>
+          </div>
+          <div class="statsPartidas">
+            <span>Perdidas</span> <br>
+            <span class="cantPart" id="valCantPerd"></span>
+          </div>
+          <hr>
+        </div>
+
+        <div id="distribStats">
+          <p>Distribución</p> <br>
+          <div class="cantGanInt">
+            <p class="">1: </p>
+            <p class="">2: </p>
+            <p class="">3: </p>
+            <p class="">4: </p>
+            <p class="">5: </p>
+            <p class="">6: </p>
+          </div>
+          <div class="progCantGanInt">
+            <progress id="prog1" value="" max="100"></progress>
+            <progress id="prog2" value="" max="100"></progress>
+            <progress id="prog3" value="" max="100"></progress>
+            <progress id="prog4" value="" max="100"></progress>
+            <progress id="prog5" value="" max="100"></progress>
+            <progress id="prog6" value="" max="100"></progress>
+          </div>
+          <div class="percCantGanInt">
+            <p id="prog1Val"></p>
+            <p id="prog2Val"></p>
+            <p id="prog3Val"></p>
+            <p id="prog4Val"></p>
+            <p id="prog5Val"></p>
+            <p id="prog6Val"></p>
+          </div>
+
+          <div id="nuevoJugTimer" class="hide">
+            <hr>
+            <p>Nuevo jugador oculto en:</p>
+            <p id="timer" class="bold"></p>
+          </div>
+
+        </div>
+      </div>
+
+      <div id="modalComoJugar" class="modalComoJugar hide">
+        <div class="closeContainer">
+          <span class="close" onclick="cerrarModal()">&times</span>
+        </div>
+        <p class="titleComoJugar">Adiviná el jugador oculto de la LUB!</p>
+        <ul>
+          <li>Tenés <strong>6 intentos</strong> para adivinarlo</li>
+          <li>Si aparece <span class="verde">verde</span> en alguna columna es el dato correcto</li>
+          <li><span class="amarillo">Amarillo</span> en la columna <strong>equipo</strong> significa que el jugador oculto jugó en ese equipo (puede haber jugado en LUB o Metro)</li>
+          <li><span class="amarillo">Amarillo</span> en la columna <strong>posición</strong> significa que el jugador juega a una posición cercana a la ingresada</li>
+          <li><span class="amarillo">Amarillo</span> en la columna <strong>altura</strong> significa que el jugador mide entre 1cm y 10cm más o menos</li>
+          <li><span class="amarillo">Amarillo</span> en la columna <strong>edad</strong> significa que el jugador es 1 o 2 años mayor o menor</li>
+          <li><span class="amarillo">Amarillo</span> en la columna <strong>número</strong> significa que la diferencia con el número del jugador está entre 1 y 2</li>
+        </ul>
+        <p style="text-align:center; color:var(--primero);">Hay un nuevo jugador oculto cada día!</p>
+      </div>
+
+    </div>
+
+    <footer class="footer">
+      <span>Hecho por <a href="https://emiliano-correa.com/" target="_blank">Emiliano Correa</a></span>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/dataLUB.js"></script>
+    <script type="text/javascript" src="js/jugadores.js"></script>
+    <script type="text/javascript" src="js/localstorage.js"></script>
+    </body>
+</html>

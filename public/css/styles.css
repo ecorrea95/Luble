@@ -1,0 +1,354 @@
+@import url('https://fonts.googleapis.com/css2?family=Solway&display=swap');
+
+/* Vartiables */
+:root {
+  --primero: #0088cf;
+  --segundo: #C0FDFB;
+  --tercero: #f1f1f1;
+  --cuarto: #18314F;
+  --amarillo: yellow;
+  --verde: limegreen;
+}
+
+/* General styles */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--tercero);
+  font-family: 'Solway', serif;
+  /* height: 100vh;
+  width: 100vw; */
+  margin-bottom: 10vh;
+}
+
+.hide {
+  display: none!important;
+}
+
+/* Navbar */
+.navbar {
+  height: 5vh;
+  width: 100%;
+  background-color: var(--primero);
+  text-align: center;
+  color: white;
+  position: fixed;
+  top: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.navbar ul li {
+  float: left;
+  margin-inline: 2rem;
+  line-height: 5vh;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.navbar ul li:hover {
+  text-decoration: underline 3px var(--segundo);
+}
+
+.navbar ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* Titulos */
+.title {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 4rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+/* Busqueda */
+.searchContainer {
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  height: 2rem;
+}
+
+.search {
+  height: 2rem;
+  width: 50%;
+  max-width: 28rem;
+  min-width: 14rem;
+  padding: 0.2rem;
+  border: 3px solid var(--cuarto);
+  font-size: 20px;
+}
+
+.ui-autocomplete {
+  max-height: 150px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+/* IE 6 doesn't support max-height
+ * we use height instead, but this forces the menu to always be this tall
+ */
+* html .ui-autocomplete {
+  height: 100px;
+}
+
+.btnBuscar {
+  height: 2.7rem;
+  padding: 5px;
+  vertical-align: bottom;
+  background-color: var(--primero);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Intentos */
+.grid-container {
+  display: grid;
+  grid-template-columns: 36% 13% 11% 9% 8% 10% 13%;
+  background-color: var(--cuarto);
+  padding: 10px;
+  margin: auto;
+  width: 95%;
+  max-width: 55rem;
+}
+
+.grid-item {
+  background-color: var(--tercero);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+/* Imagenes */
+.logoEquipo {
+  width: 5rem;
+  display: block;
+  margin: auto;
+}
+
+/* Modal */
+.modal {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.closeContainer {
+  width: 100%;
+  text-align: right;
+}
+
+.close {
+  font-size: 2rem;
+  position: absolute;
+  margin-top: -2rem;
+  cursor: pointer;
+  color: var(--primero);
+}
+
+.close:hover {
+  color: var(--cuarto);
+}
+
+/* Modal Stats */
+.modalStats {
+  width: 40%;
+  margin: auto;
+  margin-top: 5vh;
+  background-color: white;
+  text-align: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.statsPartidas {
+  display: inline-block;
+  width: 30%;
+  height: 5rem;
+  border: 2px solid;
+}
+
+.cantPart {
+  line-height: 3rem;
+  font-size: 2rem;
+}
+
+.cantGanInt {
+  width: 24%;
+  display: inline-block;
+  text-align: right;
+}
+
+.progCantGanInt {
+  width: 50%;
+  display: inline-block;
+}
+
+.percCantGanInt {
+  width: 22%;
+  display: inline-block;
+  text-align: left;
+}
+
+progress {
+  width: 95%;
+}
+
+/* For Chrome or Safari */
+progress::-webkit-progress-bar {
+  background-color: var(--tercero);
+  /* background-color: #eeeeee; */
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--primero) !important;
+}
+
+/* For Firefox */
+progress {
+  background-color: var(--tercero);
+}
+
+progress::-moz-progress-bar {
+  background-color: var(primero) !important;
+}
+
+/* For IE10 */
+progress {
+  background-color: var(--tercero);
+}
+
+progress {
+  background-color: var(--primero);
+}
+
+hr {
+  margin: 1rem;
+}
+
+.timer {
+  font-weight: bold;
+}
+
+.mensjPerGan {
+  font-weight: bold;
+}
+
+/* Modal como jugar */
+.modalComoJugar {
+  width: 70%;
+  margin: auto;
+  margin-top: 5vh;
+  background-color: white;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.modalComoJugar ul {
+  margin-bottom: 1rem;
+}
+
+.modalComoJugar ul li {
+  margin-block: 0.5rem;
+  list-style-type: square;
+}
+
+.verde {
+  background-color: var(--verde);
+}
+
+.amarillo {
+  background-color: var(--amarillo);
+}
+
+.titleComoJugar {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:var(--primero);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: var(--primero);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5vh;
+  line-height: 5vh;
+  font-size: 15px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer a:hover {
+  text-decoration: underline 3px var(--segundo);
+}
+
+/* Responsive */
+@media screen and (max-width: 920px) {
+  .navbar ul li {
+    margin-inline: 0.7rem;
+  }
+  .grid-container {
+    grid-template-columns: 20% 14% 20% 16% 16% 14%;
+  }
+  .grid-item:nth-child(7n - 6) {
+    grid-column: 1/7;
+  }
+  .grid-item {
+    padding: 10px;
+  }
+  .logoEquipo {
+    width: 3rem!important;
+  }
+  .search {
+    width: 75%;
+  }
+  .nombreResponsive {
+    display: none;
+  }
+  .modal {
+    width: 101%;
+  }
+  .modalComoJugar {
+    width: 80%;
+    padding: 0;
+    padding-inline: 1.7rem;
+    font-size: 1rem;
+    overflow: auto;
+    height: 82%;
+  }
+  .modalStats {
+    width: 90%;
+    padding: 0.5rem;
+  }
+}
