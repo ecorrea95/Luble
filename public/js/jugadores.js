@@ -17,7 +17,7 @@ $(document).ready(function() {
       jugadorOculto = jugadores[i];
     }
   }
-  console.log(jugadorOculto);
+  // console.log(jugadorOculto);
 
   for (let i=0; i<int.length; i++) {
     let j = jugadores.filter(function(jugador) {

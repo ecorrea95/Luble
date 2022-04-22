@@ -110,6 +110,15 @@ body {
   height: 100px;
 }
 
+.btnBuscar {
+  height: 2.7rem;
+  padding: 5px;
+  vertical-align: bottom;
+  background-color: var(--primero);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 
 /* Intentos */
 .grid-container {
