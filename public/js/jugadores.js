@@ -11,34 +11,34 @@ var jugadorOculto;
 // }
 
 $(document).ready(function() {
-  let j = $("#test").text();
-  for (let i=0; i<jugadores.length; i++) {
-    if (j == jugadores[i].nombre) {
-      jugadorOculto = jugadores[i];
-    }
-  }
-  // console.log(jugadorOculto);
+  // let j = $("#test").text();
+  // for (let i=0; i<jugadores.length; i++) {
+  //   if (j == jugadores[i].nombre) {
+  //     jugadorOculto = jugadores[i];
+  //   }
+  // }
+  // // console.log(jugadorOculto);
 
-  for (let i=0; i<int.length; i++) {
-    let j = jugadores.filter(function(jugador) {
-      return jugador.nombre === int[i];
-    });
-    if (int != '') {
-      imprimirJugadorCargado(j);
-      $("#intentos").removeClass("hide");
-      $("#columnasTitulos").removeClass("hide");
-      let status = localStorage.getItem('status');
-      if (status == "ganado") {
-        $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
-      } else {
-        $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
-      }
-    }
+  // for (let i=0; i<int.length; i++) {
+  //   let j = jugadores.filter(function(jugador) {
+  //     return jugador.nombre === int[i];
+  //   });
+  //   if (int != '') {
+  //     imprimirJugadorCargado(j);
+  //     $("#intentos").removeClass("hide");
+  //     $("#columnasTitulos").removeClass("hide");
+  //     let status = localStorage.getItem('status');
+  //     if (status == "ganado") {
+  //       $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+  //     } else {
+  //       $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
+  //     }
+  //   }
 
-    if (i == 5) {
-      verificarIntentoCargado();
-    }
-  }
+  //   if (i == 5) {
+  //     verificarIntentoCargado();
+  //   }
+  // }
 });
 
 // COMPARACIONES
