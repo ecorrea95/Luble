@@ -41,53 +41,11 @@
 
     <div id="test" class="hide">
     </div>
-    <script type="text/javascript">
-      let url="https://luble.herokuapp.com/test";
-      // let url="http://localhost:8001/test";
-      fetch(url).then(response => response.json())
-      .then( (result) => {
-        let div=document.getElementById('test');
-        div.innerHTML=`${result.jugadorOculto}`;
-        $("#nombreJugOculto").text(result.jugadorOculto);
-        // console.log(result.jugadorOculto);
-        let j = $("#test").text();
-        for (let i=0; i<jugadores.length; i++) {
-          if (j == jugadores[i].nombre) {
-            jugadorOculto = jugadores[i];
-          }
-        }
-        // console.log(jugadorOculto);
-
-        for (let i=0; i<int.length; i++) {
-          let j = jugadores.filter(function(jugador) {
-            return jugador.nombre === int[i];
-          });
-          if (int != '') {
-            imprimirJugadorCargado(j);
-            $("#intentos").removeClass("hide");
-            $("#columnasTitulos").removeClass("hide");
-            let status = localStorage.getItem('status');
-            if (status == "ganado") {
-              $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
-            } else {
-              $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
-            }
-          }
-
-          if (i == 5) {
-            verificarIntentoCargado();
-          }
-        }
-      })
-      .catch(error => console.log('error:', error));
-  </script>
-
 
     <div class="searchContainer">
       <input id="buscador" list="opcionesJ" class="search" placeholder="Intento 1/6...">
       <button class="btnBuscar">Buscar!</button>
     </div>
-
 
     <div id="columnasTitulos" class="grid-container hide" style="position:sticky; top:5vh;">
       <div class="grid-item nombreResponsive" style="background-color:#c1c2c3;">Nombre</div>
@@ -198,5 +156,45 @@
     <script type="text/javascript" src="js/dataLUB.js"></script>
     <script type="text/javascript" src="js/jugadores.js"></script>
     <script type="text/javascript" src="js/localstorage.js"></script>
+    <script type="text/javascript">
+      let url="https://luble.herokuapp.com/test";
+      // let url="http://localhost:8001/test";
+      fetch(url).then(response => response.json())
+        .then( (result) => {
+          let div=document.getElementById('test');
+          div.innerHTML=`${result.jugadorOculto}`;
+          $("#nombreJugOculto").text(result.jugadorOculto);
+          // console.log(result.jugadorOculto);
+          let j = $("#test").text();
+          for (let i=0; i<jugadores.length; i++) {
+            if (j == jugadores[i].nombre) {
+              jugadorOculto = jugadores[i];
+            }
+          }
+          // console.log(jugadorOculto);
+
+          for (let i=0; i<int.length; i++) {
+            let j = jugadores.filter(function(jugador) {
+              return jugador.nombre === int[i];
+            });
+            if (int != '') {
+              imprimirJugadorCargado(j);
+              $("#intentos").removeClass("hide");
+              $("#columnasTitulos").removeClass("hide");
+              let status = localStorage.getItem('status');
+              if (status == "ganado") {
+                $("#buscador").prop("placeholder", "Adivinado en el intento "+(intento-1)+"!");
+              } else {
+                $("#buscador").prop("placeholder", "Intento "+(intento-1)+"/6...")
+              }
+            }
+
+            if (i == 5) {
+              verificarIntentoCargado();
+            }
+          }
+        })
+        .catch(error => console.log('error:', error));
+      </script>
     </body>
 </html>
