@@ -1806,7 +1806,7 @@ $( function() {
 
   var j = '';
   for (let i=0; i<jugadores.length; i++) {
-    j += "<option value="+jugadores[i].nombre+">"
+    j += "<option>"+jugadores[i].nombre+"</option>";
   }
   $(j).appendTo('#opcionesJ');
 
