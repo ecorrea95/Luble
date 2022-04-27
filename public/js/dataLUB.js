@@ -1,5 +1,3 @@
-const { append } = require("express/lib/response");
-
 // Data jugadores LUB
 const jugadores = [
   // Aguada
