@@ -12,10 +12,6 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
 
-// app.get('/test',(req,res)=>{
-//   res.json({jugadorOculto:"Demian Alvarez"});
-// })
-
 app.get('/render',(req,res)=>{
   res.sendFile(__dirname +"/index.html");
 })
@@ -1834,6 +1830,7 @@ function jugadorRandom() {
 
 jugadorRandom();
 
+// Correr funcion de jugador oculto cada dia a la medianoche
 const job = schedule.scheduleJob('0 0 * * * *', function(){
   jugadorRandom();
 });
