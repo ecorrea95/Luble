@@ -1,5 +1,3 @@
-const { append } = require("express/lib/response");
-
 // Data jugadores LUB
 const jugadores = [
   // Aguada
@@ -1798,18 +1796,11 @@ const jugadores = [
 
 // Ingreso las opcines en el input
 $( function() {
-  // var availableTags = [];
-  // for (let i=0; i<jugadores.length; i++) {
-  //   availableTags.push(jugadores[i].nombre);
-  // }
-  // $( "#buscador" ).autocomplete({
-  //   source: availableTags
-  // });
-
-  var j = '';
+  var availableTags = [];
   for (let i=0; i<jugadores.length; i++) {
-    j += "<option value="+jugadores[i].nombre+">"
+    availableTags.push(jugadores[i].nombre);
   }
-  $(j).appendTo('#opcionesJ');
-
-});
+  $( "#buscador" ).autocomplete({
+    source: availableTags
+  });
+} );
