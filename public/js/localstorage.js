@@ -111,7 +111,7 @@ function updateStats() {
     $("#prog1Val").text("0%");
   } else {
     $("#prog1").val(gan1/statCantPartG*100);
-    $("#prog1Val").text((gan1/statCantPartG*100).toFixed(2)+"%");
+    $("#prog1Val").text((gan1/statCantPartG*100).toFixed(0)+"%");
   }
 
   var gan2 = localStorage.getItem('ganada2');
@@ -120,7 +120,7 @@ function updateStats() {
     $("#prog2Val").text("0%");
   } else {
     $("#prog2").val(gan2/statCantPartG*100);
-    $("#prog2Val").text((gan2/statCantPartG*100).toFixed(2)+"%");
+    $("#prog2Val").text((gan2/statCantPartG*100).toFixed(0)+"%");
   }
 
   var gan3 = localStorage.getItem('ganada3');
@@ -129,7 +129,7 @@ function updateStats() {
     $("#prog3Val").text("0%");
   } else {
     $("#prog3").val(gan3/statCantPartG*100);
-    $("#prog3Val").text((gan3/statCantPartG*100).toFixed(2)+"%");
+    $("#prog3Val").text((gan3/statCantPartG*100).toFixed(0)+"%");
   }
 
   var gan4 = localStorage.getItem('ganada4');
@@ -138,7 +138,7 @@ function updateStats() {
     $("#prog4Val").text("0%");
   } else {
     $("#prog4").val(gan4/statCantPartG*100);
-    $("#prog4Val").text((gan4/statCantPartG*100).toFixed(2)+"%");
+    $("#prog4Val").text((gan4/statCantPartG*100).toFixed(0)+"%");
   }
 
   var gan5 = localStorage.getItem('ganada5');
@@ -147,7 +147,7 @@ function updateStats() {
     $("#prog5Val").text("0%");
   } else {
     $("#prog5").val(gan5/statCantPartG*100);
-    $("#prog5Val").text((gan5/statCantPartG*100).toFixed(2)+"%");
+    $("#prog5Val").text((gan5/statCantPartG*100).toFixed(0)+"%");
   }
 
   var gan6 = localStorage.getItem('ganada6');
@@ -156,6 +156,6 @@ function updateStats() {
     $("#prog6Val").text("0%");
   } else {
     $("#prog6").val(gan6/statCantPartG*100);
-    $("#prog6Val").text((gan6/statCantPartG*100).toFixed(2)+"%");
+    $("#prog6Val").text((gan6/statCantPartG*100).toFixed(0)+"%");
   }
 }
