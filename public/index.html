@@ -14,9 +14,6 @@
     
     <link rel="stylesheet" href="css/styles.css">
 
-    <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css"> -->
-
     <meta name="description" content="Luble es un juego al estilo Wordle, en donde el objetivo es adivinar el jugador de la Liga Uruguay de Basketball en 6 intentos o menos. Hay un jugador oculto nuevo todos los días."/>
     <meta name="keywords" content="Luble, Liga Uruguaya de Basketball, Basket, Basketball, LUB, Uruguay, Basketball Uruguayo, Basquetbol Uruguayo, Jugador de basketball, Wordle">
     <meta name="author" content="Emiliano Correa"/>
@@ -43,10 +40,10 @@
     </div>
 
     <div class="searchContainer">
-      <input id="buscador" list="opcionesJ" class="search" placeholder="Intento 1/6...">
-      <datalist id="opcionesJ">
-      </datalist>      
-      <button class="btnBuscar">¡Adivinar!</button>
+      <div class="autocomplete">
+        <input id="buscador" list="opcionesJ" class="search" placeholder="Intento 1/6...">
+      </div>
+      <button id="adivinar" class="btnBuscar">¡Adivinar!</button>
     </div>
 
     <div id="columnasTitulos" class="grid-container hide" style="position:sticky; top:5vh;">
@@ -159,8 +156,8 @@
     <script type="text/javascript" src="js/jugadores.js"></script>
     <script type="text/javascript" src="js/localstorage.js"></script>
     <script type="text/javascript">
-      let url="https://lubletestios.herokuapp.com/test";
-      // let url="http://localhost:8001/test";
+      // let url="https://lubletest.herokuapp.com/test";
+      let url="http://localhost:8001/test";
       fetch(url).then(response => response.json())
         .then( (result) => {
           let div=document.getElementById('test');

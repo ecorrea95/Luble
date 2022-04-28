@@ -372,10 +372,20 @@ function cerrarModal() {
 }
 
 // Busqueda de jugador por el dropdown
-$("#buscador").change(function() {
-  let jug = $("#buscador").val();
-  buscarJugador(jug);
-  $("#buscador").val("");
+$("#adivinar").click(function() {
+  var found = j.find(element => element == $("#buscador").val());
+  if (found != undefined) {
+    buscarJugador(found);
+    $("#buscador").val("");
+  }
+});
+
+// Enter para buscar
+var input = document.getElementById("buscador");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode == 13) {
+    document.getElementById("adivinar").click();
+  }
 });
 
 // Timer para otro jugador oculto
