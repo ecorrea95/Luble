@@ -89,9 +89,8 @@ body {
 
 .search {
   height: 2rem;
-  width: 50%;
+  width: 95.3%;
   max-width: 28rem;
-  min-width: 14rem;
   padding: 0.2rem;
   border: 3px solid var(--cuarto);
   font-size: 20px;
@@ -111,24 +110,7 @@ body {
 .autocomplete {
   position: relative;
   display: inline-block;
-}
-
-input {
-  border: 1px solid transparent;
-  background-color: #f1f1f1;
-  padding: 10px;
-  font-size: 16px;
-}
-
-input[type=text] {
-  background-color: #f1f1f1;
-  width: 100%;
-}
-
-input[type=submit] {
-  background-color: DodgerBlue;
-  color: #fff;
-  cursor: pointer;
+  /* width: 40%; */
 }
 
 .autocomplete-items {
@@ -392,5 +374,13 @@ hr {
   .modalStats {
     width: 90%;
     padding: 0.5rem;
+  }
+}
+@media screen and (max-width: 330px) {
+  .search {
+    width: 11rem;
+  }
+  .navbar ul li {
+    font-size: 1rem;
   }
 }
