@@ -37,7 +37,6 @@ body {
   color: white;
   position: fixed;
   top: 0;
-  z-index: 2;
 }
 
 .navbar ul {
@@ -111,7 +110,6 @@ body {
 .autocomplete {
   position: relative;
   display: inline-block;
-  z-index: -1;
 }
 
 .autocomplete-items {
@@ -363,7 +361,6 @@ hr {
   .modal {
     width: 101%;
     position: fixed;
-    z-index: 3;
   }
   .modalComoJugar {
     width: 80%;
