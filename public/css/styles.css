@@ -363,6 +363,7 @@ hr {
   .modal {
     width: 101%;
     position: fixed;
+    z-index: 3;
   }
   .modalComoJugar {
     width: 80%;
