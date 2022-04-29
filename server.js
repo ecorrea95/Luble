@@ -222,7 +222,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Nicolas Andreoli",
+    nombre: "Nicolás Andreoli",
     imagen: "images/nicolasandreoli.jpg",
     equipoActual: "Biguá",
     equipoActualAb: "BIG",
@@ -1224,7 +1224,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Angel Varela",
+    nombre: "Ángel Varela",
     imagen: "images/angelvarela.jpg",
     equipoActual: "Olivol Mundial",
     equipoActualAb: "OMU",
@@ -1746,7 +1746,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Hernando Caceres",
+    nombre: "Hernando Cáceres",
     imagen: "images/hernandocaceres.jpg",
     equipoActual: "Urupan",
     equipoActualAb: "URU",
