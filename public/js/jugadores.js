@@ -116,11 +116,11 @@ function comparoEdad(jugador, jugadorOculto) {
   }
   // Si la edad es 2 años más baja
   if ( (jugador.edad - jugadorOculto.edad) <= 2 && (jugador.edad - jugadorOculto.edad) > 0 ) {
-    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'<br>&uarr;</div>';
+    resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'<br>&darr;</div>';
   }
   // Si la edad es 2 años más alta
   if ( (jugador.edad - jugadorOculto.edad) >= -2 && (jugador.edad - jugadorOculto.edad) < 0 ) {
-   resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'<br>&darr;</div>';
+   resultado = '<div class="grid-item" style="background-color:var(--amarillo)">'+jugador.edad+'<br>&uarr;</div>';
   }
   i += resultado;
 }
