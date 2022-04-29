@@ -39,7 +39,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Sebastian Izaguirre",
+    nombre: "Sebastián Izaguirre",
     imagen: "images/sebastianizaguirre.jpg",
     equipoActual: "Aguada",
     equipoActualAb: "AGU",
@@ -53,7 +53,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Leandro Garcia Morales",
+    nombre: "Leandro García Morales",
     imagen: "images/leandrogarciamorales.jpg",
     equipoActual: "Aguada",
     equipoActualAb: "AGU",
@@ -67,7 +67,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Mathias Calfani",
+    nombre: "Mathías Calfani",
     imagen: "images/mathiascalfani.jpg",
     equipoActual: "Aguada",
     equipoActualAb: "AGU",
@@ -208,7 +208,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Hernan Alvarez",
+    nombre: "Hernán Álvarez",
     imagen: "images/hernanalvarez.jpg",
     equipoActual: "Biguá",
     equipoActualAb: "BIG",
@@ -250,7 +250,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Diego Pena Garcia",
+    nombre: "Diego Pena García",
     imagen: "images/diegopenagarcia.jpg",
     equipoActual: "Biguá",
     equipoActualAb: "BIG",
@@ -264,7 +264,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Alex Lopez",
+    nombre: "Alex López",
     imagen: "images/alexlopez.jpg",
     equipoActual: "Biguá",
     equipoActualAb: "BIG",
@@ -278,7 +278,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Martin Rojas",
+    nombre: "Martín Rojas",
     imagen: "images/martinrojas.jpg",
     equipoActual: "Biguá",
     equipoActualAb: "BIG",
@@ -363,7 +363,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Demian Alvarez",
+    nombre: "Demian Álvarez",
     imagen: "images/demianalvares.jpg",
     equipoActual: "Capitol",
     equipoActualAb: "CAP",
@@ -406,7 +406,7 @@ const jugadores = [
   },
   // Defensor Sporting
   {
-    nombre: "Gonzalo Alvarez",
+    nombre: "Gonzalo Álvarez",
     imagen: "images/gonzaloalvarez.png",
     equipoActual: "Defensor Sporting",
     equipoActualAb: "DSC",
@@ -533,7 +533,7 @@ const jugadores = [
   },
   // Goes
   {
-    nombre: "Joaquin Osimani",
+    nombre: "Joaquín Osimani",
     imagen: "images/joaquinosimani.jpg",
     equipoActual: "Goes",
     equipoActualAb: "GOE",
@@ -561,7 +561,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Martin Osimani",
+    nombre: "Martín Osimani",
     imagen: "images/martinosimani.jpg",
     equipoActual: "Goes",
     equipoActualAb: "GOE",
@@ -603,7 +603,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Sebastian Sosa",
+    nombre: "Sebastián Sosa",
     imagen: "images/sebastiansosa.jpg",
     equipoActual: "Goes",
     equipoActualAb: "GOE",
@@ -645,7 +645,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Fernando Martinez",
+    nombre: "Fernando Martínez",
     imagen: "images/fernandomartinez.jpg",
     equipoActual: "Goes",
     equipoActualAb: "GOE",
@@ -1097,7 +1097,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Agustin Cabillon",
+    nombre: "Agustin Cabillón",
     imagen: "images/agustincabillon.jpg",
     equipoActual: "Olimpia",
     equipoActualAb: "OLI",
@@ -1111,7 +1111,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Nicolas Catala",
+    nombre: "Nicolás Catalá",
     imagen: "images/nicolascatala.jpg",
     equipoActual: "Olimpia",
     equipoActualAb: "OLI",
@@ -1125,7 +1125,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Brian Garcia",
+    nombre: "Brian García",
     imagen: "images/briangarcia.jpg",
     equipoActual: "Olimpia",
     equipoActualAb: "OLI",
@@ -1224,7 +1224,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Ángel Varela",
+    nombre: "Angel Varela",
     imagen: "images/angelvarela.jpg",
     equipoActual: "Olivol Mundial",
     equipoActualAb: "OMU",
@@ -1252,7 +1252,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Christian Pereira",
+    nombre: "Christián Pereira",
     imagen: "images/christianpereira.jpg",
     equipoActual: "Olivol Mundial",
     equipoActualAb: "OMU",
@@ -1294,7 +1294,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Diego Alvarez",
+    nombre: "Diego Álvarez",
     imagen: "images/diegoalvarez.jpg",
     equipoActual: "Olivol Mundial",
     equipoActualAb: "OMU",
@@ -1337,7 +1337,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Diego Garcia",
+    nombre: "Diego García",
     imagen: "images/diegogarcia.jpg",
     equipoActual: "Peñarol",
     equipoActualAb: "PEÑ",
@@ -1351,7 +1351,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Leandro Garcia Morandi",
+    nombre: "Leandro García Morandi",
     imagen: "images/leandrogarciamorandi.jpg",
     equipoActual: "Peñarol",
     equipoActualAb: "PEÑ",
@@ -1393,7 +1393,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Martin Aguilera",
+    nombre: "Martín Aguilera",
     imagen: "images/martinaguilera.jpg",
     equipoActual: "Peñarol",
     equipoActualAb: "PEÑ",
@@ -1421,7 +1421,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Nicolas Borsellino",
+    nombre: "Nicolás Borsellino",
     imagen: "images/nicolasborsellino.jpg",
     equipoActual: "Peñarol",
     equipoActualAb: "PEÑ",
@@ -1435,7 +1435,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Gianfranco Espindola",
+    nombre: "Gianfranco Espíndola",
     imagen: "images/gianfrancoespindola.jpg",
     equipoActual: "Peñarol",
     equipoActualAb: "PEÑ",
@@ -1463,7 +1463,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Orlando Mendez",
+    nombre: "Orlando Méndez",
     imagen: "images/orlandomendez.png",
     equipoActual: "Peñarol",
     equipoActualAb: "PEÑ",
@@ -1605,7 +1605,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "German Silvarrey",
+    nombre: "Germán Silvarrey",
     imagen: "images/germansilvarrey.png",
     equipoActual: "Urunday Universitario",
     equipoActualAb: "UU",
@@ -1619,7 +1619,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Andres Dotti",
+    nombre: "Andrés Dotti",
     imagen: "images/andresdotti.png",
     equipoActual: "Urunday Universitario",
     equipoActualAb: "UU",
@@ -1633,7 +1633,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Nicolas Delgado",
+    nombre: "Nicolás Delgado",
     imagen: "images/nicolasdelgado.png",
     equipoActual: "Urunday Universitario",
     equipoActualAb: "UU",
@@ -1661,7 +1661,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Agustin Da Costa",
+    nombre: "Agustín Da Costa",
     imagen: "images/agustindacosta.png",
     equipoActual: "Urunday Universitario",
     equipoActualAb: "UU",
@@ -1718,7 +1718,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Mateo Suarez",
+    nombre: "Mateo Suárez",
     imagen: "images/mateosuarez.jpg",
     equipoActual: "Urupan",
     equipoActualAb: "URU",
@@ -1774,7 +1774,7 @@ const jugadores = [
     extranjero: "Si"
   },
   {
-    nombre: "Martin Trelles",
+    nombre: "Martín Trelles",
     imagen: "images/martintrelles.jpg",
     equipoActual: "Urupan",
     equipoActualAb: "URU",
@@ -1788,7 +1788,7 @@ const jugadores = [
     extranjero: "No"
   },
   {
-    nombre: "Sebastian Ottonello",
+    nombre: "Sebastián Ottonello",
     imagen: "images/sebastianottonello.jpg",
     equipoActual: "Urupan",
     equipoActualAb: "URU",
